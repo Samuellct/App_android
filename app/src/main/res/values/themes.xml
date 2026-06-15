@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SuiviHeuresInterim" parent="android:Theme.DeviceDefault.NoActionBar">
+        <!-- Main application theme. Custom colors will be handled in Jetpack Compose. -->
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="database" path="interim_hours_db" />
+    <include domain="database" path="interim_hours_db-shm" />
+    <include domain="database" path="interim_hours_db-wal" />
+    <include domain="sharedpref" path="settings_prefs.xml" />
+</full-backup-content>
