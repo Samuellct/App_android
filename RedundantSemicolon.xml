@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/navigation/AppNavigation.kt</file>
+  <line>72</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.navigation</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.navigation.AppNavigationKt void AppNavigation(androidx.compose.ui.Modifier modifier, androidx.navigation.NavHostController navController)" />
+  <problem_class id="RedundantSemicolon" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Redundant semicolon</problem_class>
+  <description>Redundant semicolon</description>
+  <highlighted_element>;</highlighted_element>
+  <language>kotlin</language>
+  <offset>21</offset>
+  <length>1</length>
+</problem>
+</problems>

@@ -180,7 +180,7 @@ fun SettingsScreen(
                     Spacer(modifier = Modifier.height(12.dp))
 
                     Text(
-                        "Suivi Intérim V1.0\nDéveloppé pour simplifier le suivi d'activité des intérimaires.",
+                        "Work Log V1.0\nDéveloppé pour simplifier le suivi d'activité des intérimaires.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )

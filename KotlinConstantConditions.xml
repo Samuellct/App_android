@@ -1,0 +1,44 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>264</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarGrid(java.util.Calendar selectedMonth, java.util.Map&lt;java.lang.Integer,? extends java.util.List&lt;com.interim.hours.data.model.WorkDayWithDetails&gt;&gt; workDaysByDay, java.util.Calendar selectedDayCalendar, kotlin.jvm.functions.Function1&lt;? super java.util.Calendar,kotlin.Unit&gt; onDayClick)" />
+  <problem_class id="KotlinConstantConditions" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Constant conditions</problem_class>
+  <description>Condition 'selectedDayCalendar?.get(Calendar.DAY_OF_MONTH) == dayNum &amp;&amp;
+                                    selectedDayCalendar.get(Calendar.MONTH) == selectedMonth.get(Calendar.MONTH) &amp;&amp;
+                                    selectedDayCalendar.get(Calendar.YEAR) == selectedMonth.get(Calendar.YEAR)' is always false</description>
+  <highlighted_element>selectedDayCalendar?.get(Calendar.DAY_OF_MONTH) == dayNum &amp;&amp; sel...</highlighted_element>
+  <language>kotlin</language>
+  <offset>45</offset>
+  <length>287</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>264</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarGrid(java.util.Calendar selectedMonth, java.util.Map&lt;java.lang.Integer,? extends java.util.List&lt;com.interim.hours.data.model.WorkDayWithDetails&gt;&gt; workDaysByDay, java.util.Calendar selectedDayCalendar, kotlin.jvm.functions.Function1&lt;? super java.util.Calendar,kotlin.Unit&gt; onDayClick)" />
+  <problem_class id="KotlinConstantConditions" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Constant conditions</problem_class>
+  <description>Condition 'selectedDayCalendar?.get(Calendar.DAY_OF_MONTH) == dayNum &amp;&amp;
+                                    selectedDayCalendar.get(Calendar.MONTH) == selectedMonth.get(Calendar.MONTH)' is always false</description>
+  <highlighted_element>selectedDayCalendar?.get(Calendar.DAY_OF_MONTH) == dayNum &amp;&amp; sel...</highlighted_element>
+  <language>kotlin</language>
+  <offset>45</offset>
+  <length>173</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>273</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarGrid(java.util.Calendar selectedMonth, java.util.Map&lt;java.lang.Integer,? extends java.util.List&lt;com.interim.hours.data.model.WorkDayWithDetails&gt;&gt; workDaysByDay, java.util.Calendar selectedDayCalendar, kotlin.jvm.functions.Function1&lt;? super java.util.Calendar,kotlin.Unit&gt; onDayClick)" />
+  <problem_class id="KotlinConstantConditions" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Constant conditions</problem_class>
+  <description>Value of 'isSelected' is always false</description>
+  <highlighted_element>isSelected</highlighted_element>
+  <language>kotlin</language>
+  <offset>45</offset>
+  <length>10</length>
+</problem>
+</problems>

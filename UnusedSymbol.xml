@@ -1,0 +1,93 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/data/repository/MissionRepository.kt</file>
+  <line>15</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.data.repository</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.data.repository.MissionRepository kotlinx.coroutines.flow.Flow&lt;java.util.List&lt;com.interim.hours.data.model.Mission&gt;&gt; getMissionsFlow()" />
+  <problem_class id="UnusedSymbol" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused symbol</problem_class>
+  <description>Function &quot;getMissionsFlow&quot; is never used</description>
+  <highlighted_element>getMissionsFlow</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/data/repository/MissionRepository.kt</file>
+  <line>20</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.data.repository</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.data.repository.MissionRepository java.lang.Object getMissionWithBonusesById(int id, kotlin.coroutines.Continuation&lt;? super com.interim.hours.data.model.MissionWithBonuses&gt; $completion)" />
+  <problem_class id="UnusedSymbol" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused symbol</problem_class>
+  <description>Function &quot;getMissionWithBonusesById&quot; is never used</description>
+  <highlighted_element>getMissionWithBonusesById</highlighted_element>
+  <language>kotlin</language>
+  <offset>16</offset>
+  <length>25</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/data/repository/WorkDayRepository.kt</file>
+  <line>18</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.data.repository</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.data.repository.WorkDayRepository java.lang.Object getWorkDayWithDetailsById(int id, kotlin.coroutines.Continuation&lt;? super com.interim.hours.data.model.WorkDayWithDetails&gt; $completion)" />
+  <problem_class id="UnusedSymbol" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused symbol</problem_class>
+  <description>Function &quot;getWorkDayWithDetailsById&quot; is never used</description>
+  <highlighted_element>getWorkDayWithDetailsById</highlighted_element>
+  <language>kotlin</language>
+  <offset>16</offset>
+  <length>25</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardViewModel.kt</file>
+  <line>106</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardViewModel void deleteWorkDay(com.interim.hours.data.model.WorkDay workDay)" />
+  <problem_class id="UnusedSymbol" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused symbol</problem_class>
+  <description>Function &quot;deleteWorkDay&quot; is never used</description>
+  <highlighted_element>deleteWorkDay</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Color.kt</file>
+  <line>37</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.theme</package>
+  <entry_point TYPE="field" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Color.kt WarningOrange" />
+  <problem_class id="UnusedSymbol" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused symbol</problem_class>
+  <description>Property &quot;WarningOrange&quot; is never used</description>
+  <highlighted_element>WarningOrange</highlighted_element>
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Color.kt</file>
+  <line>42</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.theme</package>
+  <entry_point TYPE="field" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Color.kt GradientSunset" />
+  <problem_class id="UnusedSymbol" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused symbol</problem_class>
+  <description>Property &quot;GradientSunset&quot; is never used</description>
+  <highlighted_element>GradientSunset</highlighted_element>
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Color.kt</file>
+  <line>43</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.theme</package>
+  <entry_point TYPE="field" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Color.kt GradientDarkCard" />
+  <problem_class id="UnusedSymbol" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused symbol</problem_class>
+  <description>Property &quot;GradientDarkCard&quot; is never used</description>
+  <highlighted_element>GradientDarkCard</highlighted_element>
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>16</length>
+</problem>
+</problems>

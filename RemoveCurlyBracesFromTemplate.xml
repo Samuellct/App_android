@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>292</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void MonthlyProgressCard(double hours, double target, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="RemoveCurlyBracesFromTemplate" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Redundant curly braces in string template</problem_class>
+  <description>Redundant curly braces in string template</description>
+  <highlighted_element>${target}</highlighted_element>
+  <language>kotlin</language>
+  <offset>39</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>307</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="RemoveCurlyBracesFromTemplate" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Redundant curly braces in string template</problem_class>
+  <description>Redundant curly braces in string template</description>
+  <highlighted_element>${breakMinutes}</highlighted_element>
+  <language>kotlin</language>
+  <offset>48</offset>
+  <length>15</length>
+</problem>
+</problems>

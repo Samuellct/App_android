@@ -1,0 +1,223 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>15</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Suivi'</description>
+  <highlighted_element>Suivi</highlighted_element>
+  <language>XML</language>
+  <offset>36</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>15</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>XML</language>
+  <offset>41</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>20</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Suivi'</description>
+  <highlighted_element>Suivi</highlighted_element>
+  <language>XML</language>
+  <offset>40</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>20</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>XML</language>
+  <offset>45</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/data/model/Mission.kt</file>
+  <line>21</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.data.model</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.data.model.Mission Mission(int id, java.lang.String company, java.lang.String agency, double hourlyRate, java.lang.String siteAddress, java.lang.String colorHex, boolean isActive, java.lang.String syncId, int nightStartHour, int nightEndHour, double nightRatePercentage, boolean hasIfmIccp)" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Iccp'</description>
+  <highlighted_element>Iccp</highlighted_element>
+  <language>kotlin</language>
+  <offset>14</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>386</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Iccp'</description>
+  <highlighted_element>Iccp</highlighted_element>
+  <language>kotlin</language>
+  <offset>14</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Theme.kt</file>
+  <line>51</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.theme</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.theme.ThemeKt void SuiviHeuresTheme(boolean darkTheme, boolean dynamicColor, androidx.compose.runtime.internal.ComposableFunction0&lt;kotlin.Unit&gt; content)" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Suivi'</description>
+  <highlighted_element>Suivi</highlighted_element>
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/theme/Theme.kt</file>
+  <line>51</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.theme</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.theme.ThemeKt void SuiviHeuresTheme(boolean darkTheme, boolean dynamicColor, androidx.compose.runtime.internal.ComposableFunction0&lt;kotlin.Unit&gt; content)" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>9</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/utils/SalaryCalculator.kt</file>
+  <line>73</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.utils</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.utils.SalaryCalculator double calculateEarnings(com.interim.hours.data.model.WorkDay workDay, com.interim.hours.data.model.Mission mission, java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt; bonuses)" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'iccp'</description>
+  <highlighted_element>iccp</highlighted_element>
+  <language>kotlin</language>
+  <offset>16</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/values/strings.xml</file>
+  <line>3</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Suivi'</description>
+  <highlighted_element>Suivi</highlighted_element>
+  <language>XML</language>
+  <offset>28</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/values/themes.xml</file>
+  <line>3</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/themes.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Suivi'</description>
+  <highlighted_element>Suivi</highlighted_element>
+  <language>XML</language>
+  <offset>23</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/values/themes.xml</file>
+  <line>3</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/values/themes.xml" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>XML</language>
+  <offset>28</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/gradlew.bat</file>
+  <line>25</line>
+  <module>SuiviHeuresInterim</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/gradlew.bat" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'setlocal'</description>
+  <highlighted_element>setlocal</highlighted_element>
+  <language>textmate</language>
+  <offset>24</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/gradlew.bat</file>
+  <line>37</line>
+  <module>SuiviHeuresInterim</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/gradlew.bat" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Dfile'</description>
+  <highlighted_element>Dfile</highlighted_element>
+  <language>textmate</language>
+  <offset>22</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/gradlew.bat</file>
+  <line>44</line>
+  <module>SuiviHeuresInterim</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/gradlew.bat" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'ERRORLEVEL'</description>
+  <highlighted_element>ERRORLEVEL</highlighted_element>
+  <language>textmate</language>
+  <offset>4</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/gradlew.bat</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/gradlew.bat" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'Dorg'</description>
+  <highlighted_element>Dorg</highlighted_element>
+  <language>textmate</language>
+  <offset>60</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/gradlew.bat</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/gradlew.bat" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'appname'</description>
+  <highlighted_element>appname</highlighted_element>
+  <language>textmate</language>
+  <offset>72</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/gradlew.bat</file>
+  <line>90</line>
+  <module>SuiviHeuresInterim</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/gradlew.bat" />
+  <problem_class id="SpellCheckingInspection" severity="TYPO" attribute_key="TYPO">Spelling</problem_class>
+  <description>Typo: In word 'endlocal'</description>
+  <highlighted_element>endlocal</highlighted_element>
+  <language>textmate</language>
+  <offset>24</offset>
+  <length>8</length>
+</problem>
+</problems>

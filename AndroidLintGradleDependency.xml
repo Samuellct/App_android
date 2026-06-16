@@ -1,0 +1,226 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>10</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of &lt;code&gt;compileSdk&lt;/code&gt; than 34 is available: 37&lt;/html&gt;</description>
+  <highlighted_element>compileSdk = 34</highlighted_element>
+  <language>kotlin</language>
+  <offset>4</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>55</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.core:core-ktx than 1.12.0 is available: 1.19.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.core:core-ktx:1.12.0&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>31</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>56</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.7.0 is available: 2.10.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.lifecycle:lifecycle-runtime-ktx:2.7.0&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>48</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>57</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.activity:activity-compose than 1.8.2 is available: 1.13.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.activity:activity-compose:1.8.2&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>42</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>69</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.navigation:navigation-compose than 2.7.7 is available: 2.9.8&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.navigation:navigation-compose:2.7.7&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>46</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>73</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.8.4&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.room:room-runtime:$roomVersion&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>41</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>74</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.8.4&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.room:room-ktx:$roomVersion&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>37</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.8.4&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.room:room-compiler:$roomVersion&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>42</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>81</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.hilt:hilt-navigation-compose than 1.2.0 is available: 1.3.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.hilt:hilt-navigation-compose:1.2.0&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>45</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>85</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.work:work-runtime-ktx than 2.9.0 is available: 2.11.2&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.work:work-runtime-ktx:$workVersion&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>45</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>86</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.hilt:hilt-work than 1.2.0 is available: 1.3.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.hilt:hilt-work:1.2.0&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>19</offset>
+  <length>31</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>87</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.hilt:hilt-compiler than 1.2.0 is available: 1.3.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.hilt:hilt-compiler:1.2.0&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>35</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.3.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.test.ext:junit:1.1.5&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>30</offset>
+  <length>31</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>92</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.7.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.test.espresso:espresso-core:3.5.1&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>30</offset>
+  <length>44</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/build.gradle.kts</file>
+  <line>93</line>
+  <module>SuiviHeuresInterim.app</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of androidx.compose:compose-bom than 2024.04.01 is available: 2026.05.01&lt;/html&gt;</description>
+  <highlighted_element>&quot;androidx.compose:compose-bom:2024.04.01&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>39</offset>
+  <length>41</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/build.gradle.kts</file>
+  <line>6</line>
+  <module>SuiviHeuresInterim</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/build.gradle.kts" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of com.google.devtools.ksp than 1.9.23-1.0.20 is available: 2.1.0-1.0.29&lt;/html&gt;</description>
+  <highlighted_element>&quot;1.9.23-1.0.20&quot;</highlighted_element>
+  <language>kotlin</language>
+  <offset>42</offset>
+  <length>15</length>
+</problem>
+</problems>

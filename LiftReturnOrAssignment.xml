@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>57</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="LiftReturnOrAssignment" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Return or assignment can be lifted out</problem_class>
+  <description>'Assignment' can be lifted out of 'if'</description>
+  <highlighted_element>if</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>2</length>
+</problem>
+</problems>

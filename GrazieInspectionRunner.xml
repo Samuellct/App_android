@@ -1,0 +1,2159 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>84</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Calendrier'</description>
+  <highlighted_element>Calendrier</highlighted_element>
+  <language>kotlin</language>
+  <offset>32</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>105</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Mois'</description>
+  <highlighted_element>Mois</highlighted_element>
+  <language>kotlin</language>
+  <offset>74</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>113</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Mois'</description>
+  <highlighted_element>Mois</highlighted_element>
+  <language>kotlin</language>
+  <offset>75</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>113</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'suivant'</description>
+  <highlighted_element>suivant</highlighted_element>
+  <language>kotlin</language>
+  <offset>80</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>174</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Saisir'</description>
+  <highlighted_element>Saisir</highlighted_element>
+  <language>kotlin</language>
+  <offset>30</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>193</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'd'heures'</description>
+  <highlighted_element>d'heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>37</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>193</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarScreen(com.interim.hours.ui.calendar.CalendarViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'enregistrées'</description>
+  <highlighted_element>enregistrées</highlighted_element>
+  <language>kotlin</language>
+  <offset>46</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>397</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarDayWorkItem(com.interim.hours.data.model.WorkDayWithDetails dayWithDetails, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onEdit, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDelete, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Supprimer'</description>
+  <highlighted_element>Supprimer</highlighted_element>
+  <language>kotlin</language>
+  <offset>73</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/calendar/CalendarScreen.kt</file>
+  <line>411</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.calendar</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.calendar.CalendarScreenKt void CalendarDayWorkItem(com.interim.hours.data.model.WorkDayWithDetails dayWithDetails, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onEdit, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDelete, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'travaillées'</description>
+  <highlighted_element>travaillées</highlighted_element>
+  <language>kotlin</language>
+  <offset>74</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>52</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'bord'</description>
+  <highlighted_element>bord</highlighted_element>
+  <language>kotlin</language>
+  <offset>43</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>62</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Saisir'</description>
+  <highlighted_element>Saisir</highlighted_element>
+  <language>kotlin</language>
+  <offset>31</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>83</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Mois'</description>
+  <highlighted_element>Mois</highlighted_element>
+  <language>kotlin</language>
+  <offset>33</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>83</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'cours'</description>
+  <highlighted_element>cours</highlighted_element>
+  <language>kotlin</language>
+  <offset>41</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>85</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Semaine'</description>
+  <highlighted_element>Semaine</highlighted_element>
+  <language>kotlin</language>
+  <offset>36</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Revenu'</description>
+  <highlighted_element>Revenu</highlighted_element>
+  <language>kotlin</language>
+  <offset>33</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'estimé'</description>
+  <highlighted_element>estimé</highlighted_element>
+  <language>kotlin</language>
+  <offset>40</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>93</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Semaine'</description>
+  <highlighted_element>Semaine</highlighted_element>
+  <language>kotlin</language>
+  <offset>36</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>134</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'configurée'</description>
+  <highlighted_element>configurée</highlighted_element>
+  <language>kotlin</language>
+  <offset>80</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>134</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'actuellement'</description>
+  <highlighted_element>actuellement</highlighted_element>
+  <language>kotlin</language>
+  <offset>94</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>146</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Dernières'</description>
+  <highlighted_element>Dernières</highlighted_element>
+  <language>kotlin</language>
+  <offset>28</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>146</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'saisies'</description>
+  <highlighted_element>saisies</highlighted_element>
+  <language>kotlin</language>
+  <offset>38</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>173</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Aucune'</description>
+  <highlighted_element>Aucune</highlighted_element>
+  <language>kotlin</language>
+  <offset>33</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>173</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'journée'</description>
+  <highlighted_element>journée</highlighted_element>
+  <language>kotlin</language>
+  <offset>40</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>173</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'saisie'</description>
+  <highlighted_element>saisie</highlighted_element>
+  <language>kotlin</language>
+  <offset>48</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>173</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void DashboardScreen(com.interim.hours.ui.dashboard.DashboardViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'l'instant'</description>
+  <highlighted_element>l'instant</highlighted_element>
+  <language>kotlin</language>
+  <offset>60</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>286</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void MonthlyProgressCard(double hours, double target, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Objectif'</description>
+  <highlighted_element>Objectif</highlighted_element>
+  <language>kotlin</language>
+  <offset>28</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>286</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void MonthlyProgressCard(double hours, double target, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Mensuel'</description>
+  <highlighted_element>Mensuel</highlighted_element>
+  <language>kotlin</language>
+  <offset>37</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>292</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void MonthlyProgressCard(double hours, double target, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'plein'</description>
+  <highlighted_element>plein</highlighted_element>
+  <language>kotlin</language>
+  <offset>58</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/dashboard/DashboardScreen.kt</file>
+  <line>298</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.dashboard</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.dashboard.DashboardScreenKt void MonthlyProgressCard(double hours, double target, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'réalisées'</description>
+  <highlighted_element>réalisées</highlighted_element>
+  <language>kotlin</language>
+  <offset>76</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>42</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Juin'</description>
+  <highlighted_element>Juin</highlighted_element>
+  <language>kotlin</language>
+  <offset>47</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>56</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Historique'</description>
+  <highlighted_element>Historique</highlighted_element>
+  <language>kotlin</language>
+  <offset>32</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>56</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>47</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>74</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Rechercher'</description>
+  <highlighted_element>Rechercher</highlighted_element>
+  <language>kotlin</language>
+  <offset>38</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>74</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'commentaire'</description>
+  <highlighted_element>commentaire</highlighted_element>
+  <language>kotlin</language>
+  <offset>52</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>74</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'agence'</description>
+  <highlighted_element>agence</highlighted_element>
+  <language>kotlin</language>
+  <offset>65</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>98</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Toutes'</description>
+  <highlighted_element>Toutes</highlighted_element>
+  <language>kotlin</language>
+  <offset>40</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>135</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Aucun'</description>
+  <highlighted_element>Aucun</highlighted_element>
+  <language>kotlin</language>
+  <offset>33</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/history/HistoryScreen.kt</file>
+  <line>135</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.history</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.history.HistoryScreenKt void HistoryScreen(com.interim.hours.ui.history.HistoryViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'historique'</description>
+  <highlighted_element>historique</highlighted_element>
+  <language>kotlin</language>
+  <offset>39</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>69</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'd'intérim'</description>
+  <highlighted_element>d'intérim</highlighted_element>
+  <language>kotlin</language>
+  <offset>41</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>77</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'archivées'</description>
+  <highlighted_element>archivées</highlighted_element>
+  <language>kotlin</language>
+  <offset>60</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>77</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'affichées'</description>
+  <highlighted_element>affichées</highlighted_element>
+  <language>kotlin</language>
+  <offset>70</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>77</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'archivées'</description>
+  <highlighted_element>archivées</highlighted_element>
+  <language>kotlin</language>
+  <offset>96</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>77</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'masquées'</description>
+  <highlighted_element>masquées</highlighted_element>
+  <language>kotlin</language>
+  <offset>106</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>89</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'archivées'</description>
+  <highlighted_element>archivées</highlighted_element>
+  <language>kotlin</language>
+  <offset>87</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>106</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Nouvelle'</description>
+  <highlighted_element>Nouvelle</highlighted_element>
+  <language>kotlin</language>
+  <offset>31</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>137</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Aucune'</description>
+  <highlighted_element>Aucune</highlighted_element>
+  <language>kotlin</language>
+  <offset>33</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>142</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Ajoutez'</description>
+  <highlighted_element>Ajoutez</highlighted_element>
+  <language>kotlin</language>
+  <offset>33</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>142</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'saisir'</description>
+  <highlighted_element>saisir</highlighted_element>
+  <language>kotlin</language>
+  <offset>70</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>142</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'heures'</description>
+  <highlighted_element>heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>81</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>165</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionsScreen(com.interim.hours.ui.missions.MissionsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Archivées'</description>
+  <highlighted_element>Archivées</highlighted_element>
+  <language>kotlin</language>
+  <offset>45</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>258</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionCard(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onEdit, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onToggleActive, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDelete, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Agence'</description>
+  <highlighted_element>Agence</highlighted_element>
+  <language>kotlin</language>
+  <offset>36</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>278</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionCard(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onEdit, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onToggleActive, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDelete, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Restaurer'</description>
+  <highlighted_element>Restaurer</highlighted_element>
+  <language>kotlin</language>
+  <offset>85</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>291</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionCard(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onEdit, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onToggleActive, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDelete, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Supprimer'</description>
+  <highlighted_element>Supprimer</highlighted_element>
+  <language>kotlin</language>
+  <offset>47</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>316</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionCard(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onEdit, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onToggleActive, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDelete, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Taux'</description>
+  <highlighted_element>Taux</highlighted_element>
+  <language>kotlin</language>
+  <offset>26</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>316</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionCard(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onEdit, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onToggleActive, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDelete, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'horaire'</description>
+  <highlighted_element>horaire</highlighted_element>
+  <language>kotlin</language>
+  <offset>31</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>414</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Nouvelle'</description>
+  <highlighted_element>Nouvelle</highlighted_element>
+  <language>kotlin</language>
+  <offset>72</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>417</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Fermer'</description>
+  <highlighted_element>Fermer</highlighted_element>
+  <language>kotlin</language>
+  <offset>80</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>437</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Entreprise'</description>
+  <highlighted_element>Entreprise</highlighted_element>
+  <language>kotlin</language>
+  <offset>44</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>447</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Agence'</description>
+  <highlighted_element>Agence</highlighted_element>
+  <language>kotlin</language>
+  <offset>44</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>447</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'd'intérim'</description>
+  <highlighted_element>d'intérim</highlighted_element>
+  <language>kotlin</language>
+  <offset>51</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>457</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Taux'</description>
+  <highlighted_element>Taux</highlighted_element>
+  <language>kotlin</language>
+  <offset>44</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>457</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'horaire'</description>
+  <highlighted_element>horaire</highlighted_element>
+  <language>kotlin</language>
+  <offset>49</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>457</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'brut'</description>
+  <highlighted_element>brut</highlighted_element>
+  <language>kotlin</language>
+  <offset>57</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>457</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'heure'</description>
+  <highlighted_element>heure</highlighted_element>
+  <language>kotlin</language>
+  <offset>65</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>458</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'SMIC'</description>
+  <highlighted_element>SMIC</highlighted_element>
+  <language>kotlin</language>
+  <offset>57</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>469</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Adresse'</description>
+  <highlighted_element>Adresse</highlighted_element>
+  <language>kotlin</language>
+  <offset>44</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>481</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Indemnités'</description>
+  <highlighted_element>Indemnités</highlighted_element>
+  <language>kotlin</language>
+  <offset>38</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>481</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'contrat'</description>
+  <highlighted_element>contrat</highlighted_element>
+  <language>kotlin</language>
+  <offset>53</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>483</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Calcule'</description>
+  <highlighted_element>Calcule</highlighted_element>
+  <language>kotlin</language>
+  <offset>37</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>483</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'automatiquement'</description>
+  <highlighted_element>automatiquement</highlighted_element>
+  <language>kotlin</language>
+  <offset>45</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>483</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'brut'</description>
+  <highlighted_element>brut</highlighted_element>
+  <language>kotlin</language>
+  <offset>86</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>498</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Paramètres'</description>
+  <highlighted_element>Paramètres</highlighted_element>
+  <language>kotlin</language>
+  <offset>30</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>498</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'heures'</description>
+  <highlighted_element>heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>41</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>498</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'nuit'</description>
+  <highlighted_element>nuit</highlighted_element>
+  <language>kotlin</language>
+  <offset>51</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>510</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'nuit'</description>
+  <highlighted_element>nuit</highlighted_element>
+  <language>kotlin</language>
+  <offset>54</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>518</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'nuit'</description>
+  <highlighted_element>nuit</highlighted_element>
+  <language>kotlin</language>
+  <offset>52</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>530</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Majoration'</description>
+  <highlighted_element>Majoration</highlighted_element>
+  <language>kotlin</language>
+  <offset>44</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>530</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'nuit'</description>
+  <highlighted_element>nuit</highlighted_element>
+  <language>kotlin</language>
+  <offset>55</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>578</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'personnalisée'</description>
+  <highlighted_element>personnalisée</highlighted_element>
+  <language>kotlin</language>
+  <offset>66</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>589</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'quotidiennes'</description>
+  <highlighted_element>quotidiennes</highlighted_element>
+  <language>kotlin</language>
+  <offset>37</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>589</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'défaut'</description>
+  <highlighted_element>défaut</highlighted_element>
+  <language>kotlin</language>
+  <offset>54</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>592</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'seront'</description>
+  <highlighted_element>seront</highlighted_element>
+  <language>kotlin</language>
+  <offset>40</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>592</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'automatiquement'</description>
+  <highlighted_element>automatiquement</highlighted_element>
+  <language>kotlin</language>
+  <offset>47</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>592</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'remplies'</description>
+  <highlighted_element>remplies</highlighted_element>
+  <language>kotlin</language>
+  <offset>67</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>592</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'lors'</description>
+  <highlighted_element>lors</highlighted_element>
+  <language>kotlin</language>
+  <offset>76</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>592</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'saisie'</description>
+  <highlighted_element>saisie</highlighted_element>
+  <language>kotlin</language>
+  <offset>87</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>592</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'journées'</description>
+  <highlighted_element>journées</highlighted_element>
+  <language>kotlin</language>
+  <offset>101</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>608</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Panier'</description>
+  <highlighted_element>Panier</highlighted_element>
+  <language>kotlin</language>
+  <offset>57</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>615</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Montant'</description>
+  <highlighted_element>Montant</highlighted_element>
+  <language>kotlin</language>
+  <offset>48</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>639</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Ajouter'</description>
+  <highlighted_element>Ajouter</highlighted_element>
+  <language>kotlin</language>
+  <offset>78</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>659</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Supprimer'</description>
+  <highlighted_element>Supprimer</highlighted_element>
+  <language>kotlin</language>
+  <offset>85</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>698</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void MissionEditDialog(com.interim.hours.data.model.MissionWithBonuses missionWithBonuses, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.Mission,? super java.util.List&lt;com.interim.hours.data.model.MissionBonus&gt;,kotlin.Unit&gt; onSave)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Enregistrer'</description>
+  <highlighted_element>Enregistrer</highlighted_element>
+  <language>kotlin</language>
+  <offset>34</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>736</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void CustomColorPickerDialog(java.lang.String initialColorHex, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function1&lt;? super java.lang.String,kotlin.Unit&gt; onColorSelected)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Personnalisée'</description>
+  <highlighted_element>Personnalisée</highlighted_element>
+  <language>kotlin</language>
+  <offset>32</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>787</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.missions.MissionsScreenKt void CustomColorPickerDialog(java.lang.String initialColorHex, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function1&lt;? super java.lang.String,kotlin.Unit&gt; onColorSelected)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Valider'</description>
+  <highlighted_element>Valider</highlighted_element>
+  <language>kotlin</language>
+  <offset>22</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/navigation/AppNavigation.kt</file>
+  <line>65</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.navigation</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.navigation.AppNavigationKt void AppNavigation(androidx.compose.ui.Modifier modifier, androidx.navigation.NavHostController navController)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'reselecting'</description>
+  <highlighted_element>reselecting</highlighted_element>
+  <language>kotlin</language>
+  <offset>39</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/navigation/AppNavigation.kt</file>
+  <line>67</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.navigation</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.navigation.AppNavigationKt void AppNavigation(androidx.compose.ui.Modifier modifier, androidx.navigation.NavHostController navController)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'reselecting'</description>
+  <highlighted_element>reselecting</highlighted_element>
+  <language>kotlin</language>
+  <offset>58</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/navigation/Screen.kt</file>
+  <line>13</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.navigation</package>
+  <entry_point TYPE="class" FQNAME="com.interim.hours.ui.navigation.Screen.Calendar" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Calendrier'</description>
+  <highlighted_element>Calendrier</highlighted_element>
+  <language>kotlin</language>
+  <offset>42</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/navigation/Screen.kt</file>
+  <line>15</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.navigation</package>
+  <entry_point TYPE="class" FQNAME="com.interim.hours.ui.navigation.Screen.History" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Historique'</description>
+  <highlighted_element>Historique</highlighted_element>
+  <language>kotlin</language>
+  <offset>40</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/navigation/Screen.kt</file>
+  <line>16</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.navigation</package>
+  <entry_point TYPE="class" FQNAME="com.interim.hours.ui.navigation.Screen.Settings" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Réglages'</description>
+  <highlighted_element>Réglages</highlighted_element>
+  <language>kotlin</language>
+  <offset>42</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>50</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Paramètres'</description>
+  <highlighted_element>Paramètres</highlighted_element>
+  <language>kotlin</language>
+  <offset>32</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>89</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'quotidien'</description>
+  <highlighted_element>quotidien</highlighted_element>
+  <language>kotlin</language>
+  <offset>41</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Recevoir'</description>
+  <highlighted_element>Recevoir</highlighted_element>
+  <language>kotlin</language>
+  <offset>33</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'vous'</description>
+  <highlighted_element>vous</highlighted_element>
+  <language>kotlin</language>
+  <offset>62</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'oubliez'</description>
+  <highlighted_element>oubliez</highlighted_element>
+  <language>kotlin</language>
+  <offset>67</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'saisir'</description>
+  <highlighted_element>saisir</highlighted_element>
+  <language>kotlin</language>
+  <offset>78</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'heures'</description>
+  <highlighted_element>heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>89</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>113</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Heure'</description>
+  <highlighted_element>Heure</highlighted_element>
+  <language>kotlin</language>
+  <offset>34</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>143</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Exportez'</description>
+  <highlighted_element>Exportez</highlighted_element>
+  <language>kotlin</language>
+  <offset>25</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>143</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'l'intégralité'</description>
+  <highlighted_element>l'intégralité</highlighted_element>
+  <language>kotlin</language>
+  <offset>34</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>143</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'heures'</description>
+  <highlighted_element>heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>55</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>143</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'saisies'</description>
+  <highlighted_element>saisies</highlighted_element>
+  <language>kotlin</language>
+  <offset>72</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>143</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'dans'</description>
+  <highlighted_element>dans</highlighted_element>
+  <language>kotlin</language>
+  <offset>80</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>143</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'avec'</description>
+  <highlighted_element>avec</highlighted_element>
+  <language>kotlin</language>
+  <offset>110</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>160</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Partager'</description>
+  <highlighted_element>Partager</highlighted_element>
+  <language>kotlin</language>
+  <offset>30</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>177</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'propos'</description>
+  <highlighted_element>propos</highlighted_element>
+  <language>kotlin</language>
+  <offset>32</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>183</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Suivi'</description>
+  <highlighted_element>Suivi</highlighted_element>
+  <language>kotlin</language>
+  <offset>25</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>183</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'suivi'</description>
+  <highlighted_element>suivi</highlighted_element>
+  <language>kotlin</language>
+  <offset>74</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>183</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'd'activité'</description>
+  <highlighted_element>d'activité</highlighted_element>
+  <language>kotlin</language>
+  <offset>80</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsScreen.kt</file>
+  <line>183</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsScreenKt void SettingsScreen(com.interim.hours.ui.settings.SettingsViewModel viewModel, androidx.compose.ui.Modifier modifier)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'intérimaires'</description>
+  <highlighted_element>intérimaires</highlighted_element>
+  <language>kotlin</language>
+  <offset>95</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>114</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Agence'</description>
+  <highlighted_element>Agence</highlighted_element>
+  <language>kotlin</language>
+  <offset>44</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>114</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Taux'</description>
+  <highlighted_element>Taux</highlighted_element>
+  <language>kotlin</language>
+  <offset>51</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>114</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Horaire'</description>
+  <highlighted_element>Horaire</highlighted_element>
+  <language>kotlin</language>
+  <offset>56</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>114</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>64</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>114</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Travaillées'</description>
+  <highlighted_element>Travaillées</highlighted_element>
+  <language>kotlin</language>
+  <offset>71</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>114</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Commentaire'</description>
+  <highlighted_element>Commentaire</highlighted_element>
+  <language>kotlin</language>
+  <offset>90</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>135</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>55</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>135</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'd'Intérim'</description>
+  <highlighted_element>d'Intérim</highlighted_element>
+  <language>kotlin</language>
+  <offset>62</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>138</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Partager'</description>
+  <highlighted_element>Partager</highlighted_element>
+  <language>kotlin</language>
+  <offset>61</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>138</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.settings.SettingsViewModel void exportToCSV(kotlin.jvm.functions.Function1&lt;? super android.content.Intent,kotlin.Unit&gt; onShareIntentReady)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'l'export'</description>
+  <highlighted_element>l'export</highlighted_element>
+  <language>kotlin</language>
+  <offset>70</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>173</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Saisir'</description>
+  <highlighted_element>Saisir</highlighted_element>
+  <language>kotlin</language>
+  <offset>80</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>176</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Fermer'</description>
+  <highlighted_element>Fermer</highlighted_element>
+  <language>kotlin</language>
+  <offset>80</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>193</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Veuillez'</description>
+  <highlighted_element>Veuillez</highlighted_element>
+  <language>kotlin</language>
+  <offset>29</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>193</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'créer'</description>
+  <highlighted_element>créer</highlighted_element>
+  <language>kotlin</language>
+  <offset>38</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>193</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'd'abord'</description>
+  <highlighted_element>d'abord</highlighted_element>
+  <language>kotlin</language>
+  <offset>56</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>213</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Sélectionner'</description>
+  <highlighted_element>Sélectionner</highlighted_element>
+  <language>kotlin</language>
+  <offset>93</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>250</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'journée'</description>
+  <highlighted_element>journée</highlighted_element>
+  <language>kotlin</language>
+  <offset>53</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>305</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'payé'</description>
+  <highlighted_element>payé</highlighted_element>
+  <language>kotlin</language>
+  <offset>62</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>340</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'quotidiennes'</description>
+  <highlighted_element>quotidiennes</highlighted_element>
+  <language>kotlin</language>
+  <offset>41</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>340</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'cette'</description>
+  <highlighted_element>cette</highlighted_element>
+  <language>kotlin</language>
+  <offset>59</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>340</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'journée'</description>
+  <highlighted_element>journée</highlighted_element>
+  <language>kotlin</language>
+  <offset>65</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>360</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Montant'</description>
+  <highlighted_element>Montant</highlighted_element>
+  <language>kotlin</language>
+  <offset>52</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>384</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Ajouter'</description>
+  <highlighted_element>Ajouter</highlighted_element>
+  <language>kotlin</language>
+  <offset>82</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>404</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Supprimer'</description>
+  <highlighted_element>Supprimer</highlighted_element>
+  <language>kotlin</language>
+  <offset>89</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>417</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Commentaire'</description>
+  <highlighted_element>Commentaire</highlighted_element>
+  <language>kotlin</language>
+  <offset>48</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>417</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'facultatif'</description>
+  <highlighted_element>facultatif</highlighted_element>
+  <language>kotlin</language>
+  <offset>60</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>427</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'L'heure'</description>
+  <highlighted_element>L'heure</highlighted_element>
+  <language>kotlin</language>
+  <offset>37</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>427</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'doit'</description>
+  <highlighted_element>doit</highlighted_element>
+  <language>kotlin</language>
+  <offset>52</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>427</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'être'</description>
+  <highlighted_element>être</highlighted_element>
+  <language>kotlin</language>
+  <offset>57</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>427</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'l'heure'</description>
+  <highlighted_element>l'heure</highlighted_element>
+  <language>kotlin</language>
+  <offset>68</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>468</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Enregistrer'</description>
+  <highlighted_element>Enregistrer</highlighted_element>
+  <language>kotlin</language>
+  <offset>38</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/workday/WorkDayDialog.kt</file>
+  <line>468</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.workday</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.ui.workday.WorkDayDialogKt void WorkDayDialog(java.util.List&lt;com.interim.hours.data.model.MissionWithBonuses&gt; missions, kotlin.jvm.functions.Function0&lt;kotlin.Unit&gt; onDismiss, kotlin.jvm.functions.Function2&lt;? super com.interim.hours.data.model.WorkDay,? super java.util.List&lt;com.interim.hours.data.model.WorkDayBonus&gt;,kotlin.Unit&gt; onSave, com.interim.hours.data.model.WorkDayWithDetails existingWorkDayWithDetails, java.lang.Long initialDateMillis)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'journée'</description>
+  <highlighted_element>journée</highlighted_element>
+  <language>kotlin</language>
+  <offset>53</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>74</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Saisie'</description>
+  <highlighted_element>Saisie</highlighted_element>
+  <language>kotlin</language>
+  <offset>30</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>74</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Heures'</description>
+  <highlighted_element>Heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>41</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Vous'</description>
+  <highlighted_element>Vous</highlighted_element>
+  <language>kotlin</language>
+  <offset>29</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'n'avez'</description>
+  <highlighted_element>n'avez</highlighted_element>
+  <language>kotlin</language>
+  <offset>34</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'saisi'</description>
+  <highlighted_element>saisi</highlighted_element>
+  <language>kotlin</language>
+  <offset>52</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'heures'</description>
+  <highlighted_element>heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>62</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'd'intérim'</description>
+  <highlighted_element>d'intérim</highlighted_element>
+  <language>kotlin</language>
+  <offset>69</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'aujourd'hui'</description>
+  <highlighted_element>aujourd'hui</highlighted_element>
+  <language>kotlin</language>
+  <offset>79</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>75</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void sendNotification()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Pensez'</description>
+  <highlighted_element>Pensez</highlighted_element>
+  <language>kotlin</language>
+  <offset>92</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>91</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void createNotificationChannel()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'quotidiens'</description>
+  <highlighted_element>quotidiens</highlighted_element>
+  <language>kotlin</language>
+  <offset>32</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>92</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void createNotificationChannel()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'enregistrer'</description>
+  <highlighted_element>enregistrer</highlighted_element>
+  <language>kotlin</language>
+  <offset>48</offset>
+  <length>11</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>92</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void createNotificationChannel()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'heures'</description>
+  <highlighted_element>heures</highlighted_element>
+  <language>kotlin</language>
+  <offset>64</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/worker/ReminderWorker.kt</file>
+  <line>92</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.worker</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.worker.ReminderWorker void createNotificationChannel()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'journée'</description>
+  <highlighted_element>journée</highlighted_element>
+  <language>kotlin</language>
+  <offset>77</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/build.gradle.kts</file>
+  <line>1</line>
+  <module>SuiviHeuresInterim</module>
+  <package>&lt;default&gt;</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/build.gradle.kts" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>This word is normally spelled as one.</description>
+  <highlighted_element>sub-projects</highlighted_element>
+  <language>kotlin</language>
+  <offset>78</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/gradle.properties</file>
+  <line>14</line>
+  <module>SuiviHeuresInterim</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/gradle.properties" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Did you mean an apostrophe?</description>
+  <highlighted_element>app&quot;s</highlighted_element>
+  <language>Properties</language>
+  <offset>61</offset>
+  <length>5</length>
+</problem>
+</problems>

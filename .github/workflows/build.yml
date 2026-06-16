@@ -1,19 +1,23 @@
-name: Build Android APK
+name: Build & Release Work Log
 
 on:
   push:
     branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  release:
+    name: Build, Tag & Release
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Necessary for tag calculation
 
     - name: Set up JDK 21
       uses: actions/setup-java@v4
@@ -25,11 +29,75 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
+    - name: Run Unit Tests
+      run: ./gradlew testDebugUnitTest
 
-    - name: Upload Debug APK
-      uses: actions/upload-artifact@v4
+    - name: Build Debug & Release APKs
+      run: ./gradlew assembleDebug assembleRelease
+
+    # Compute and push new Semantic Version Tag based on Conventional Commits
+    - name: Bump version and push tag
+      id: bump_version
+      uses: mathieudutour/github-tag-action@v6.2
       with:
-        name: app-debug-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        default_bump: patch
+
+    # Rename APK files to include version
+    - name: Rename APKs
+      if: ${{ steps.bump_version.outputs.new_version != '' }}
+      run: |
+        VERSION="${{ steps.bump_version.outputs.new_version }}"
+        cp app/build/outputs/apk/debug/app-debug.apk "work_log_debug_v${VERSION}.apk"
+        # Release APK is unsigned in standard debug build, but let's copy it if it exists
+        if [ -f app/build/outputs/apk/release/app-release-unsigned.apk ]; then
+          cp app/build/outputs/apk/release/app-release-unsigned.apk "work_log_v${VERSION}.apk"
+        fi
+
+    # Create Release and Upload Assets
+    - name: Create Release
+      id: create_release
+      if: ${{ steps.bump_version.outputs.new_version != '' }}
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v${{ steps.bump_version.outputs.new_version }}
+        name: Release v${{ steps.bump_version.outputs.new_version }}
+        body: |
+          ## Quoi de neuf dans cette version (v${{ steps.bump_version.outputs.new_version }}) :
+          
+          ${{ steps.bump_version.outputs.changelog }}
+        files: |
+          work_log_debug_v${{ steps.bump_version.outputs.new_version }}.apk
+          work_log_v${{ steps.bump_version.outputs.new_version }}.apk
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Update CHANGELOG.md in repository
+    - name: Update CHANGELOG.md
+      if: ${{ steps.bump_version.outputs.new_version != '' }}
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        
+        VERSION="v${{ steps.bump_version.outputs.new_version }}"
+        DATE=$(date +'%Y-%m-%d')
+        CHANGELOG_CONTENT="${{ steps.bump_version.outputs.changelog }}"
+        
+        # Create CHANGELOG.md if not exists
+        if [ ! -f CHANGELOG.md ]; then
+          echo "# Changelog - Work Log" > CHANGELOG.md
+          echo "Toutes les modifications de cette application seront consignées ici." >> CHANGELOG.md
+        fi
+        
+        # Insert new version changelog at the top of the file
+        echo -e "\n## [$VERSION] - $DATE\n$CHANGELOG_CONTENT" > temp_changelog.md
+        cat CHANGELOG.md >> temp_changelog.md
+        mv temp_changelog.md CHANGELOG.md
+        
+        git add CHANGELOG.md
+        git commit -m "chore(release): update CHANGELOG.md for $VERSION [skip ci]"
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

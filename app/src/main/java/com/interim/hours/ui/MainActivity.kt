@@ -11,7 +11,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.interim.hours.ui.navigation.AppNavigation
-import com.interim.hours.ui.theme.SuiviHeuresTheme
+import com.interim.hours.ui.theme.WorkLogTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
         }
 
         setContent {
-            SuiviHeuresTheme {
+            WorkLogTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background

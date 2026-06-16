@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/utils/SalaryCalculator.kt</file>
+  <line>28</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.utils</package>
+  <entry_point TYPE="method" FQNAME="com.interim.hours.utils.SalaryCalculator double calculateNightHours(long startTimeMillis, long endTimeMillis, int nightStartHour, int nightEndHour)" />
+  <problem_class id="ConvertTwoComparisonsToRangeCheck" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Two comparisons should be converted to a range check</problem_class>
+  <description>Two comparisons should be converted to a range check</description>
+  <highlighted_element>hour &gt;= nightStartHour || hour &lt; nightEndHour</highlighted_element>
+  <language>kotlin</language>
+  <offset>16</offset>
+  <length>45</length>
+</problem>
+</problems>

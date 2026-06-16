@@ -1,0 +1,58 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>35</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt" />
+  <problem_class id="AndroidLintUseKtx" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Use KTX extension function</problem_class>
+  <hints />
+  <description>&lt;html&gt;Use the KTX extension function &lt;code&gt;String.toColorInt&lt;/code&gt; instead?&lt;/html&gt;</description>
+  <highlighted_element>android.graphics.Color.parseColor(this)</highlighted_element>
+  <language>kotlin</language>
+  <offset>14</offset>
+  <length>39</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt</file>
+  <line>725</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.missions</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/missions/MissionsScreen.kt" />
+  <problem_class id="AndroidLintUseKtx" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Use KTX extension function</problem_class>
+  <hints />
+  <description>&lt;html&gt;Use the KTX extension function &lt;code&gt;String.toColorInt&lt;/code&gt; instead?&lt;/html&gt;</description>
+  <highlighted_element>android.graphics.Color.parseColor(initialColorHex)</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>50</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>46</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt" />
+  <problem_class id="AndroidLintUseKtx" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Use KTX extension function</problem_class>
+  <hints />
+  <description>&lt;html&gt;Use the KTX extension function &lt;code&gt;SharedPreferences.edit&lt;/code&gt; instead?&lt;/html&gt;</description>
+  <highlighted_element>sharedPrefs.edit()</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>18</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt</file>
+  <line>56</line>
+  <module>SuiviHeuresInterim.app.main</module>
+  <package>com.interim.hours.ui.settings</package>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/java/com/interim/hours/ui/settings/SettingsViewModel.kt" />
+  <problem_class id="AndroidLintUseKtx" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Use KTX extension function</problem_class>
+  <hints />
+  <description>&lt;html&gt;Use the KTX extension function &lt;code&gt;SharedPreferences.edit&lt;/code&gt; instead?&lt;/html&gt;</description>
+  <highlighted_element>sharedPrefs.edit()</highlighted_element>
+  <language>kotlin</language>
+  <offset>8</offset>
+  <length>18</length>
+</problem>
+</problems>
