@@ -1,4 +1,14 @@
 
+## [v1.0.1] - 2026-06-16
+### [1.0.1](https://github.com/Samuellct/App_android/compare/v1.0.0...v1.0.1) (2026-06-16)
+
+
+### Bug Fixes
+
+* remove hardcoded custom_tag from workflow ([64b8c3d](https://github.com/Samuellct/App_android/commit/64b8c3d42b67eba4abd30fd5b135525e71b3c727))
+
+
+
 ## [v1.0.0] - 2026-06-16
 ## [1.0.0](https://github.com/Samuellct/App_android/compare/v0.1.3...v1.0.0) (2026-06-16)
 
