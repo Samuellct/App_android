@@ -20,6 +20,10 @@ interface WorkDayDao {
     fun getWorkDaysWithDetailsFlow(): Flow<List<WorkDayWithDetails>>
 
     @Transaction
+    @Query("SELECT * FROM work_days ORDER BY dateMillis DESC, startTimeMillis DESC")
+    suspend fun getWorkDaysWithDetails(): List<WorkDayWithDetails>
+
+    @Transaction
     @Query("SELECT * FROM work_days WHERE id = :id")
     suspend fun getWorkDayWithDetailsById(id: Int): WorkDayWithDetails?
 

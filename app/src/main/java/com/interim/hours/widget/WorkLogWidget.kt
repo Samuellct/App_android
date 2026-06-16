@@ -43,7 +43,7 @@ class WorkLogWidget : GlanceAppWidget() {
         val workDayDao = entryPoint.workDayDao()
 
         // Fetch workdays and calculate monthly hours and earnings
-        val workDays = workDayDao.getWorkDaysWithDetailsFlow().first()
+        val workDays = workDayDao.getWorkDaysWithDetails()
 
         val startOfMonth = Calendar.getInstance().apply {
             set(Calendar.DAY_OF_MONTH, 1)
@@ -106,7 +106,7 @@ fun GlanceWidgetContent(
     
     val labelStyle = TextStyle(
         color = ColorProvider(day = Color(0xFF64748B), night = Color(0xFF94A3B8)),
-        fontSize = 12.sp,
+        fontSize = 13.sp, // Increased for accessibility
         fontWeight = FontWeight.Medium
     )
     
@@ -136,6 +136,22 @@ fun GlanceWidgetContent(
     val prefix = if (firstChar in setOf('a', 'e', 'i', 'o', 'u', 'y', 'é', 'è', 'à', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ä', 'ë', 'ï', 'ö', 'ü')) "d'" else "de "
     val statsTitle = "Stats $prefix$currentMonthName"
 
+    // Format values to strings to dynamically determine text sizes (responsive layout)
+    val hoursStr = String.format(java.util.Locale.FRANCE, "%.1f h", monthlyHours)
+    val earningsStr = String.format(java.util.Locale.FRANCE, "%.2f €", netEarnings)
+
+    val hoursFontSize = when {
+        hoursStr.length > 7 -> 16.sp
+        hoursStr.length > 6 -> 18.sp
+        else -> 22.sp
+    }
+
+    val earningsFontSize = when {
+        earningsStr.length > 9 -> 16.sp
+        earningsStr.length > 7 -> 18.sp
+        else -> 22.sp
+    }
+
     Column(
         modifier = GlanceModifier
             .fillMaxSize()
@@ -143,15 +159,15 @@ fun GlanceWidgetContent(
             .background(backgroundColor)
             .padding(12.dp)
             .clickable(actionStartActivity<MainActivity>()),
-        verticalAlignment = Alignment.Vertical.CenterVertically,
         horizontalAlignment = Alignment.Horizontal.CenterHorizontally
     ) {
+        // Top section
         Text(
             text = "Work Log",
             style = TextStyle(
                 color = titleColor,
                 fontWeight = FontWeight.Bold,
-                fontSize = 14.sp
+                fontSize = 16.sp // Increased for accessibility
             )
         )
         
@@ -162,7 +178,8 @@ fun GlanceWidgetContent(
             style = labelStyle
         )
 
-        Spacer(modifier = GlanceModifier.height(14.dp))
+        // Center values between top title and bottom spacing
+        Spacer(modifier = GlanceModifier.defaultWeight())
 
         Row(
             modifier = GlanceModifier.fillMaxWidth(),
@@ -174,8 +191,8 @@ fun GlanceWidgetContent(
                 horizontalAlignment = Alignment.Horizontal.CenterHorizontally
             ) {
                 Text(
-                    text = String.format(java.util.Locale.FRANCE, "%.1f h", monthlyHours),
-                    style = hoursValueStyle
+                    text = hoursStr,
+                    style = hoursValueStyle.copy(fontSize = hoursFontSize)
                 )
             }
 
@@ -191,10 +208,12 @@ fun GlanceWidgetContent(
                 horizontalAlignment = Alignment.Horizontal.CenterHorizontally
             ) {
                 Text(
-                    text = String.format(java.util.Locale.FRANCE, "%.2f €", netEarnings),
-                    style = earningsValueStyle
+                    text = earningsStr,
+                    style = earningsValueStyle.copy(fontSize = earningsFontSize)
                 )
             }
         }
+
+        Spacer(modifier = GlanceModifier.defaultWeight())
     }
 }
