@@ -43,10 +43,7 @@ private val MISSION_COLORS = listOf(
     "#10B981", // Emerald
     "#3B82F6", // Blue
     "#EC4899", // Pink
-    "#F59E0B", // Amber
-    "#8B5CF6", // Purple
-    "#06B6D4", // Cyan
-    "#EF4444"  // Red
+    "#F59E0B"  // Amber
 )
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)

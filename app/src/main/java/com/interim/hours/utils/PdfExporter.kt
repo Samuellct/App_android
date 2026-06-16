@@ -16,13 +16,12 @@ import java.util.Calendar
 
 object PdfExporter {
 
-    fun exportMonthlyPdf(
+    fun generatePdfFile(
         context: Context,
-        monthStr: String, // e.g. "Juin 2026"
-        workDays: List<WorkDayWithDetails>,
-        onShareIntentReady: (Intent) -> Unit
-    ) {
-        if (workDays.isEmpty()) return
+        monthStr: String,
+        workDays: List<WorkDayWithDetails>
+    ): File? {
+        if (workDays.isEmpty()) return null
 
         val mission = workDays.first().mission
 
@@ -142,12 +141,6 @@ object PdfExporter {
             canvas.drawText(String.format(Locale.FRANCE, "%.2f €", earnings), cols[6], y, paintText)
 
             y += 18f
-
-            // Add page check in case of large lists
-            if (y > 780f) {
-                // If it grows too long, we can end the page. But since most months have <31 entries, it fits A4 easily.
-                // Keeping it single-page for simplicity and formatting perfection.
-            }
         }
 
         canvas.drawLine(40f, y, 555f, y, paintLine)
@@ -219,11 +212,22 @@ object PdfExporter {
             val fileOutputStream = FileOutputStream(cacheFile)
             pdfDocument.writeTo(fileOutputStream)
             fileOutputStream.close()
+            return cacheFile
         } catch (e: Exception) {
             e.printStackTrace()
+            return null
         } finally {
             pdfDocument.close()
         }
+    }
+
+    fun exportMonthlyPdf(
+        context: Context,
+        monthStr: String, // e.g. "Juin 2026"
+        workDays: List<WorkDayWithDetails>,
+        onShareIntentReady: (Intent) -> Unit
+    ) {
+        val cacheFile = generatePdfFile(context, monthStr, workDays) ?: return
 
         // Create Share Intent
         val fileUri = FileProvider.getUriForFile(
@@ -241,4 +245,5 @@ object PdfExporter {
 
         onShareIntentReady(shareIntent)
     }
+
 }

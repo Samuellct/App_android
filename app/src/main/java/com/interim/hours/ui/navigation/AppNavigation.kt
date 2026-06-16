@@ -34,8 +34,7 @@ fun AppNavigation(
         Screen.Dashboard,
         Screen.Calendar,
         Screen.Missions,
-        Screen.History,
-        Screen.Settings
+        Screen.History
     )
 
     Scaffold(
@@ -84,7 +83,10 @@ fun AppNavigation(
         ) {
             composable(Screen.Dashboard.route) {
                 val dashboardViewModel: DashboardViewModel = hiltViewModel()
-                DashboardScreen(viewModel = dashboardViewModel)
+                DashboardScreen(
+                    viewModel = dashboardViewModel,
+                    onNavigateToSettings = { navController.navigate(Screen.Settings.route) }
+                )
             }
             composable(Screen.Calendar.route) {
                 val calendarViewModel: CalendarViewModel = hiltViewModel()
@@ -100,7 +102,10 @@ fun AppNavigation(
             }
             composable(Screen.Settings.route) {
                 val settingsViewModel: SettingsViewModel = hiltViewModel()
-                SettingsScreen(viewModel = settingsViewModel)
+                SettingsScreen(
+                    viewModel = settingsViewModel,
+                    onBackClick = { navController.popBackStack() }
+                )
             }
         }
     }

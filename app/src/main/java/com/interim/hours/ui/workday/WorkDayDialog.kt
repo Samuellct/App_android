@@ -90,6 +90,7 @@ fun WorkDayDialog(
     var endTimeMillis by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.endTimeMillis ?: endCalendar.timeInMillis) }
 
     var breakMinutes by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.breakMinutes ?: 60) }
+    var showCustomBreakDialog by remember { mutableStateOf(false) }
     var comment by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.comment ?: "") }
 
     // Bonuses manager
@@ -301,17 +302,26 @@ fun WorkDayDialog(
                             Column(modifier = Modifier.fillMaxWidth()) {
                                 Row(
                                     modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.SpaceBetween
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
                                 ) {
                                     Text("Temps de pause (non payé)", style = MaterialTheme.typography.bodyMedium)
                                     Text(
                                         text = "${breakMinutes} min",
                                         fontWeight = FontWeight.Bold,
-                                        color = MaterialTheme.colorScheme.primary
+                                        color = MaterialTheme.colorScheme.primary,
+                                        modifier = Modifier
+                                            .clickable { showCustomBreakDialog = true }
+                                            .padding(vertical = 4.dp, horizontal = 8.dp)
+                                            .background(
+                                                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.08f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            )
+                                            .padding(horizontal = 4.dp)
                                     )
                                 }
                                 Slider(
-                                    value = breakMinutes.toFloat(),
+                                    value = breakMinutes.coerceIn(0, 180).toFloat(),
                                     onValueChange = { breakMinutes = it.toInt() },
                                     valueRange = 0f..180f,
                                     steps = 11
@@ -321,7 +331,7 @@ fun WorkDayDialog(
                                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
-                                    listOf(0, 15, 30, 45, 60).forEach { mins ->
+                                    listOf(0, 15, 30).forEach { mins ->
                                         SuggestionChip(
                                             onClick = { breakMinutes = mins },
                                             label = { Text("${mins}m") },
@@ -474,5 +484,40 @@ fun WorkDayDialog(
                 }
             }
         }
+    }
+
+    if (showCustomBreakDialog) {
+        var tempInput by remember { mutableStateOf(breakMinutes.toString()) }
+        AlertDialog(
+            onDismissRequest = { showCustomBreakDialog = false },
+            title = { Text("Temps de pause manuel") },
+            text = {
+                OutlinedTextField(
+                    value = tempInput,
+                    onValueChange = { tempInput = it.filter { char -> char.isDigit() } },
+                    label = { Text("Durée en minutes") },
+                    keyboardOptions = KeyboardOptions(keyboardType = androidx.compose.ui.text.input.KeyboardType.Number),
+                    singleLine = true
+                )
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        val parsed = tempInput.toIntOrNull()
+                        if (parsed != null) {
+                            breakMinutes = parsed
+                        }
+                        showCustomBreakDialog = false
+                    }
+                ) {
+                    Text("Valider")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showCustomBreakDialog = false }) {
+                    Text("Annuler")
+                }
+            }
+        )
     }
 }

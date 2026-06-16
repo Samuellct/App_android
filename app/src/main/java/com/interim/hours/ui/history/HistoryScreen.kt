@@ -38,8 +38,36 @@ fun HistoryScreen(
     val filteredWorkDays by viewModel.filteredWorkDaysState.collectAsState()
     val activeMissions by viewModel.activeMissionsState.collectAsState()
 
+    val context = LocalContext.current
     var showEditDialog by remember { mutableStateOf(false) }
     var selectedWorkDayForEdit by remember { mutableStateOf<WorkDayWithDetails?>(null) }
+
+    var showPdfOptionsDialog by remember { mutableStateOf(false) }
+    var selectedMonthForPdf by remember { mutableStateOf<String?>(null) }
+    var selectedDaysForPdf by remember { mutableStateOf<List<WorkDayWithDetails>>(emptyList()) }
+    var pendingFileToSave by remember { mutableStateOf<java.io.File?>(null) }
+
+    val saveLauncher = androidx.activity.compose.rememberLauncherForActivityResult(
+        contract = androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == android.app.Activity.RESULT_OK) {
+            val destUri = result.data?.data
+            val sourceFile = pendingFileToSave
+            if (destUri != null && sourceFile != null) {
+                try {
+                    context.contentResolver.openOutputStream(destUri)?.use { out ->
+                        sourceFile.inputStream().use { input ->
+                            input.copyTo(out)
+                        }
+                    }
+                    android.widget.Toast.makeText(context, "Fichier enregistré avec succès", android.widget.Toast.LENGTH_LONG).show()
+                } catch (e: Exception) {
+                    android.widget.Toast.makeText(context, "Erreur lors de l'enregistrement: ${e.message}", android.widget.Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+        pendingFileToSave = null
+    }
 
     // Helper to format month groupings (e.g. "Juin 2026")
     val monthYearFormat = remember { SimpleDateFormat("MMMM yyyy", Locale.FRANCE) }
@@ -143,7 +171,6 @@ fun HistoryScreen(
                 } else {
                     groupedWorkDays.forEach { (monthStr, daysList) ->
                         item {
-                            val context = LocalContext.current
                             Row(
                                 modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
                                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -157,14 +184,9 @@ fun HistoryScreen(
                                 )
                                 TextButton(
                                     onClick = {
-                                        com.interim.hours.utils.PdfExporter.exportMonthlyPdf(
-                                            context = context,
-                                            monthStr = monthStr,
-                                            workDays = daysList
-                                        ) { intent ->
-                                            val chooser = Intent.createChooser(intent, "Partager le relevé PDF")
-                                            context.startActivity(chooser)
-                                        }
+                                        selectedMonthForPdf = monthStr
+                                        selectedDaysForPdf = daysList
+                                        showPdfOptionsDialog = true
                                     }
                                 ) {
                                     Icon(
@@ -205,6 +227,80 @@ fun HistoryScreen(
                 showEditDialog = false
             },
             existingWorkDayWithDetails = selectedWorkDayForEdit
+        )
+    }
+
+    if (showPdfOptionsDialog) {
+        val monthStr = selectedMonthForPdf ?: ""
+        val daysList = selectedDaysForPdf
+        AlertDialog(
+            onDismissRequest = { showPdfOptionsDialog = false },
+            title = { Text("Options d'export PDF", fontWeight = FontWeight.Bold) },
+            text = {
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                ) {
+                    Text(
+                        text = "Relevé d'heures pour $monthStr",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    
+                    Button(
+                        onClick = {
+                            showPdfOptionsDialog = false
+                            val file = com.interim.hours.utils.PdfExporter.generatePdfFile(context, monthStr, daysList)
+                            if (file != null) {
+                                val fileUri = androidx.core.content.FileProvider.getUriForFile(
+                                    context,
+                                    "${context.packageName}.fileprovider",
+                                    file
+                                )
+                                val shareIntent = Intent(Intent.ACTION_SEND).apply {
+                                    type = "application/pdf"
+                                    putExtra(Intent.EXTRA_STREAM, fileUri)
+                                    putExtra(Intent.EXTRA_SUBJECT, "Work Log - Relevé d'heures $monthStr")
+                                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                                }
+                                val chooser = Intent.createChooser(shareIntent, "Partager le relevé PDF")
+                                context.startActivity(chooser)
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(Icons.Default.Share, contentDescription = null)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Partager le relevé PDF")
+                    }
+
+                    OutlinedButton(
+                        onClick = {
+                            showPdfOptionsDialog = false
+                            val file = com.interim.hours.utils.PdfExporter.generatePdfFile(context, monthStr, daysList)
+                            if (file != null) {
+                                pendingFileToSave = file
+                                val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                                    addCategory(Intent.CATEGORY_OPENABLE)
+                                    type = "application/pdf"
+                                    putExtra(Intent.EXTRA_TITLE, "work_log_${monthStr.lowercase().replace(" ", "_")}.pdf")
+                                }
+                                saveLauncher.launch(intent)
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(Icons.Default.Download, contentDescription = null)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Enregistrer dans vos fichiers")
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showPdfOptionsDialog = false }) {
+                    Text("Fermer")
+                }
+            }
         )
     }
 }
