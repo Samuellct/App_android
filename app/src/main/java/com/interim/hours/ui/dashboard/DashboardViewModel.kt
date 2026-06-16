@@ -1,5 +1,7 @@
 package com.interim.hours.ui.dashboard
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.interim.hours.data.model.MissionWithBonuses
@@ -9,6 +11,8 @@ import com.interim.hours.data.model.WorkDayWithDetails
 import com.interim.hours.data.repository.MissionRepository
 import com.interim.hours.data.repository.WorkDayRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
@@ -19,9 +23,38 @@ import javax.inject.Inject
 
 @HiltViewModel
 class DashboardViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val missionRepository: MissionRepository,
     private val workDayRepository: WorkDayRepository
 ) : ViewModel() {
+
+    private val sharedPrefs = context.getSharedPreferences("settings_prefs", Context.MODE_PRIVATE)
+
+    private val _targetType = MutableStateFlow(sharedPrefs.getString("target_type", "HOURS") ?: "HOURS")
+    val targetType: StateFlow<String> = _targetType
+
+    private val _targetValueHours = MutableStateFlow(sharedPrefs.getFloat("target_value_hours", 151.67f))
+    val targetValueHours: StateFlow<Float> = _targetValueHours
+
+    private val _targetValueEarnings = MutableStateFlow(sharedPrefs.getFloat("target_value_earnings", 1800f))
+    val targetValueEarnings: StateFlow<Float> = _targetValueEarnings
+
+    private val prefListener = SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
+        when (key) {
+            "target_type" -> _targetType.value = prefs.getString("target_type", "HOURS") ?: "HOURS"
+            "target_value_hours" -> _targetValueHours.value = prefs.getFloat("target_value_hours", 151.67f)
+            "target_value_earnings" -> _targetValueEarnings.value = prefs.getFloat("target_value_earnings", 1800f)
+        }
+    }
+
+    init {
+        sharedPrefs.registerOnSharedPreferenceChangeListener(prefListener)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        sharedPrefs.unregisterOnSharedPreferenceChangeListener(prefListener)
+    }
 
     val activeMissionsState: StateFlow<List<MissionWithBonuses>> =
         missionRepository.getMissionsWithBonusesFlow()
@@ -37,13 +70,19 @@ class DashboardViewModel @Inject constructor(
         val weeklyEarnings: Double = 0.0,
         val monthlyEarnings: Double = 0.0,
         val activeMissionsCount: Int = 0,
-        val recentDays: List<WorkDayWithDetails> = emptyList()
+        val recentDays: List<WorkDayWithDetails> = emptyList(),
+        val targetType: String = "HOURS",
+        val targetValueHours: Float = 151.67f,
+        val targetValueEarnings: Float = 1800f
     )
 
     val statsState: StateFlow<DashboardStats> = combine(
         activeMissionsState,
-        workDaysState
-    ) { missions, workDays ->
+        workDaysState,
+        targetType,
+        targetValueHours,
+        targetValueEarnings
+    ) { missions, workDays, type, tHours, tEarnings ->
         val now = Calendar.getInstance()
 
         val startOfMonth = Calendar.getInstance().apply {
@@ -116,7 +155,10 @@ class DashboardViewModel @Inject constructor(
             weeklyEarnings = weeklyEarnings,
             monthlyEarnings = monthlyEarnings,
             activeMissionsCount = missions.count { it.mission.isActive },
-            recentDays = workDays.take(3)
+            recentDays = workDays.take(3),
+            targetType = type,
+            targetValueHours = tHours,
+            targetValueEarnings = tEarnings
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), DashboardStats())
 

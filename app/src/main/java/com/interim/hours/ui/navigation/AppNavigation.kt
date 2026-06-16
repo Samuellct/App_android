@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -24,20 +25,29 @@ import com.interim.hours.ui.missions.MissionsScreen
 import com.interim.hours.ui.missions.MissionsViewModel
 import com.interim.hours.ui.settings.SettingsScreen
 import com.interim.hours.ui.settings.SettingsViewModel
+import com.interim.hours.ui.onboarding.OnboardingScreen
 
 @Composable
 fun AppNavigation(
     modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
+    settingsViewModel: SettingsViewModel = hiltViewModel()
 ) {
-    val items = listOf(
-        Screen.Dashboard,
-        Screen.Calendar,
-        Screen.Missions,
-        Screen.History
-    )
+    val hasCompletedOnboarding by settingsViewModel.hasCompletedOnboarding.collectAsState()
 
-    Scaffold(
+    if (!hasCompletedOnboarding) {
+        OnboardingScreen(
+            onFinish = { settingsViewModel.setOnboardingCompleted(true) }
+        )
+    } else {
+        val items = listOf(
+            Screen.Dashboard,
+            Screen.Calendar,
+            Screen.Missions,
+            Screen.History
+        )
+
+        Scaffold(
         bottomBar = {
             NavigationBar(
                 containerColor = MaterialTheme.colorScheme.surface,
@@ -108,5 +118,6 @@ fun AppNavigation(
                 )
             }
         }
+    }
     }
 }

@@ -5,8 +5,10 @@ import android.content.Intent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.*
+import com.interim.hours.data.repository.MissionRepository
 import com.interim.hours.data.repository.WorkDayRepository
 import com.interim.hours.worker.ReminderWorker
+import com.interim.hours.ui.theme.ThemeMode
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,10 +23,53 @@ import javax.inject.Inject
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val workDayRepository: WorkDayRepository
+    private val workDayRepository: WorkDayRepository,
+    private val missionRepository: MissionRepository
 ) : ViewModel() {
 
     private val sharedPrefs = context.getSharedPreferences("settings_prefs", Context.MODE_PRIVATE)
+
+    private val _appTheme = MutableStateFlow(
+        ThemeMode.valueOf(sharedPrefs.getString("app_theme", ThemeMode.SYSTEM.name) ?: ThemeMode.SYSTEM.name)
+    )
+    val appTheme: StateFlow<ThemeMode> = _appTheme
+
+    fun setAppTheme(theme: ThemeMode) {
+        sharedPrefs.edit().putString("app_theme", theme.name).apply()
+        _appTheme.value = theme
+    }
+
+    private val _targetType = MutableStateFlow(sharedPrefs.getString("target_type", "HOURS") ?: "HOURS")
+    val targetType: StateFlow<String> = _targetType
+
+    private val _targetValueHours = MutableStateFlow(sharedPrefs.getFloat("target_value_hours", 151.67f))
+    val targetValueHours: StateFlow<Float> = _targetValueHours
+
+    private val _targetValueEarnings = MutableStateFlow(sharedPrefs.getFloat("target_value_earnings", 1800f))
+    val targetValueEarnings: StateFlow<Float> = _targetValueEarnings
+
+    fun setTargetType(type: String) {
+        sharedPrefs.edit().putString("target_type", type).apply()
+        _targetType.value = type
+    }
+
+    fun setTargetValueHours(value: Float) {
+        sharedPrefs.edit().putFloat("target_value_hours", value).apply()
+        _targetValueHours.value = value
+    }
+
+    fun setTargetValueEarnings(value: Float) {
+        sharedPrefs.edit().putFloat("target_value_earnings", value).apply()
+        _targetValueEarnings.value = value
+    }
+
+    private val _hasCompletedOnboarding = MutableStateFlow(sharedPrefs.getBoolean("has_completed_onboarding", false))
+    val hasCompletedOnboarding: StateFlow<Boolean> = _hasCompletedOnboarding
+
+    fun setOnboardingCompleted(completed: Boolean) {
+        sharedPrefs.edit().putBoolean("has_completed_onboarding", completed).apply()
+        _hasCompletedOnboarding.value = completed
+    }
 
     private val _notificationsEnabled = MutableStateFlow(sharedPrefs.getBoolean("notifications_enabled", true))
     val notificationsEnabled: StateFlow<Boolean> = _notificationsEnabled
@@ -136,6 +181,215 @@ class SettingsViewModel @Inject constructor(
                 putExtra(Intent.EXTRA_TEXT, csvBuilder.toString())
             }
             onShareIntentReady(Intent.createChooser(intent, "Partager l'export CSV"))
+        }
+    }
+
+    fun exportBackupJson(uri: android.net.Uri, onComplete: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            try {
+                val missionsWithBonuses = missionRepository.getMissionsWithBonusesFlow().first()
+                val workDaysWithDetails = workDayRepository.getWorkDaysWithDetailsFlow().first()
+
+                val rootJson = org.json.JSONObject()
+                rootJson.put("version", 1)
+
+                // Missions
+                val missionsArray = org.json.JSONArray()
+                missionsWithBonuses.forEach { item ->
+                    val mission = item.mission
+                    val mJson = org.json.JSONObject().apply {
+                        put("syncId", mission.syncId)
+                        put("company", mission.company)
+                        put("agency", mission.agency)
+                        put("hourlyRate", mission.hourlyRate)
+                        put("siteAddress", mission.siteAddress)
+                        put("colorHex", mission.colorHex)
+                        put("isActive", mission.isActive)
+                        put("nightStartHour", mission.nightStartHour)
+                        put("nightEndHour", mission.nightEndHour)
+                        put("nightRatePercentage", mission.nightRatePercentage)
+                        put("hasIfmIccp", mission.hasIfmIccp)
+                        put("hasWeeklyOvertime", mission.hasWeeklyOvertime)
+                        put("weeklyOvertimeThreshold", mission.weeklyOvertimeThreshold)
+                        put("overtimeRate1Percentage", mission.overtimeRate1Percentage)
+                        put("overtimeRate2Percentage", mission.overtimeRate2Percentage)
+                    }
+
+                    val bonusesArray = org.json.JSONArray()
+                    item.bonuses.forEach { bonus ->
+                        val bJson = org.json.JSONObject().apply {
+                            put("name", bonus.name)
+                            put("defaultAmount", bonus.defaultAmount)
+                        }
+                        bonusesArray.put(bJson)
+                    }
+                    mJson.put("bonuses", bonusesArray)
+                    missionsArray.put(mJson)
+                }
+                rootJson.put("missions", missionsArray)
+
+                // WorkDays
+                val workDaysArray = org.json.JSONArray()
+                workDaysWithDetails.forEach { item ->
+                    val day = item.workDay
+                    val dJson = org.json.JSONObject().apply {
+                        put("syncId", day.syncId)
+                        put("missionSyncId", item.mission.syncId)
+                        put("dateMillis", day.dateMillis)
+                        put("startTimeMillis", day.startTimeMillis)
+                        put("endTimeMillis", day.endTimeMillis)
+                        put("breakMinutes", day.breakMinutes)
+                        put("comment", day.comment)
+                    }
+
+                    val bonusesArray = org.json.JSONArray()
+                    item.bonuses.forEach { bonus ->
+                        val bJson = org.json.JSONObject().apply {
+                            put("name", bonus.name)
+                            put("amount", bonus.amount)
+                        }
+                        bonusesArray.put(bJson)
+                    }
+                    dJson.put("bonuses", bonusesArray)
+                    workDaysArray.put(dJson)
+                }
+                rootJson.put("workDays", workDaysArray)
+
+                // Write to Uri
+                context.contentResolver.openOutputStream(uri)?.use { outputStream ->
+                    outputStream.write(rootJson.toString(2).toByteArray(Charsets.UTF_8))
+                }
+                onComplete(true)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                onComplete(false)
+            }
+        }
+    }
+
+    fun importBackupJson(uri: android.net.Uri, onComplete: (Boolean, String) -> Unit) {
+        viewModelScope.launch {
+            try {
+                val jsonString = context.contentResolver.openInputStream(uri)?.use { inputStream ->
+                    inputStream.bufferedReader().use { it.readText() }
+                } ?: throw Exception("Impossible de lire le flux d'entrée")
+
+                val rootJson = org.json.JSONObject(jsonString)
+                val version = rootJson.optInt("version", 1)
+
+                val missionsArray = rootJson.optJSONArray("missions") ?: org.json.JSONArray()
+                val workDaysArray = rootJson.optJSONArray("workDays") ?: org.json.JSONArray()
+
+                var importedMissions = 0
+                var importedWorkDays = 0
+
+                // Keep track of syncId to new generated mission ID mapping
+                val missionSyncIdToIdMap = mutableMapOf<String, Int>()
+
+                // First, read all existing missions to avoid inserting duplicates if they already exist
+                val existingMissions = missionRepository.getMissionsWithBonusesFlow().first()
+                val existingMissionsMap = existingMissions.associateBy { it.mission.syncId }
+
+                // Insert/Update missions
+                for (i in 0 until missionsArray.length()) {
+                    val mJson = missionsArray.getJSONObject(i)
+                    val syncId = mJson.optString("syncId", java.util.UUID.randomUUID().toString())
+                    
+                    val existing = existingMissionsMap[syncId]
+                    
+                    val mission = com.interim.hours.data.model.Mission(
+                        id = existing?.mission?.id ?: 0,
+                        syncId = syncId,
+                        company = mJson.getString("company"),
+                        agency = mJson.getString("agency"),
+                        hourlyRate = mJson.getDouble("hourlyRate"),
+                        siteAddress = mJson.getString("siteAddress"),
+                        colorHex = mJson.getString("colorHex"),
+                        isActive = mJson.optBoolean("isActive", true),
+                        nightStartHour = mJson.optInt("nightStartHour", 21),
+                        nightEndHour = mJson.optInt("nightEndHour", 6),
+                        nightRatePercentage = mJson.optDouble("nightRatePercentage", 0.0),
+                        hasIfmIccp = mJson.optBoolean("hasIfmIccp", true),
+                        hasWeeklyOvertime = mJson.optBoolean("hasWeeklyOvertime", true),
+                        weeklyOvertimeThreshold = mJson.optDouble("weeklyOvertimeThreshold", 35.0),
+                        overtimeRate1Percentage = mJson.optDouble("overtimeRate1Percentage", 25.0),
+                        overtimeRate2Percentage = mJson.optDouble("overtimeRate2Percentage", 50.0)
+                    )
+
+                    val bonusesArray = mJson.optJSONArray("bonuses") ?: org.json.JSONArray()
+                    val bonuses = mutableListOf<com.interim.hours.data.model.MissionBonus>()
+                    for (j in 0 until bonusesArray.length()) {
+                        val bJson = bonusesArray.getJSONObject(j)
+                        bonuses.add(
+                            com.interim.hours.data.model.MissionBonus(
+                                missionId = mission.id,
+                                name = bJson.getString("name"),
+                                defaultAmount = bJson.getDouble("defaultAmount")
+                            )
+                        )
+                    }
+
+                    // Save the mission to database
+                    missionRepository.saveMission(mission, bonuses)
+                    
+                    // We need the database ID. Let's find it.
+                    val updatedMissions = missionRepository.getMissionsFlow().first()
+                    val savedMission = updatedMissions.find { it.syncId == syncId }
+                    if (savedMission != null) {
+                        missionSyncIdToIdMap[syncId] = savedMission.id
+                    }
+                    importedMissions++
+                }
+
+                // Read existing work days to update/prevent duplicates
+                val existingWorkDays = workDayRepository.getWorkDaysWithDetailsFlow().first()
+                val existingWorkDaysMap = existingWorkDays.associateBy { it.workDay.syncId }
+
+                // Insert/Update workdays
+                for (i in 0 until workDaysArray.length()) {
+                    val dJson = workDaysArray.getJSONObject(i)
+                    val syncId = dJson.optString("syncId", java.util.UUID.randomUUID().toString())
+                    val missionSyncId = dJson.getString("missionSyncId")
+                    
+                    val dbMissionId = missionSyncIdToIdMap[missionSyncId]
+                        ?: existingMissions.find { it.mission.syncId == missionSyncId }?.mission?.id
+                        ?: continue // Skip if mission doesn't exist or couldn't be resolved
+
+                    val existing = existingWorkDaysMap[syncId]
+
+                    val workDay = com.interim.hours.data.model.WorkDay(
+                        id = existing?.workDay?.id ?: 0,
+                        missionId = dbMissionId,
+                        dateMillis = dJson.getLong("dateMillis"),
+                        startTimeMillis = dJson.getLong("startTimeMillis"),
+                        endTimeMillis = dJson.getLong("endTimeMillis"),
+                        breakMinutes = dJson.getInt("breakMinutes"),
+                        comment = dJson.optString("comment", ""),
+                        syncId = syncId
+                    )
+
+                    val bonusesArray = dJson.optJSONArray("bonuses") ?: org.json.JSONArray()
+                    val bonuses = mutableListOf<com.interim.hours.data.model.WorkDayBonus>()
+                    for (j in 0 until bonusesArray.length()) {
+                        val bJson = bonusesArray.getJSONObject(j)
+                        bonuses.add(
+                            com.interim.hours.data.model.WorkDayBonus(
+                                workDayId = workDay.id,
+                                name = bJson.getString("name"),
+                                amount = bJson.getDouble("amount")
+                            )
+                        )
+                    }
+
+                    workDayRepository.saveWorkDay(workDay, bonuses)
+                    importedWorkDays++
+                }
+
+                onComplete(true, "Importation réussie : $importedMissions missions et $importedWorkDays journées importées.")
+            } catch (e: Exception) {
+                e.printStackTrace()
+                onComplete(false, "Erreur lors de l'importation : ${e.localizedMessage}")
+            }
         }
     }
 }

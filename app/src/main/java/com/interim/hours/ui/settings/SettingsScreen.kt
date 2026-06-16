@@ -1,23 +1,34 @@
 package com.interim.hours.ui.settings
 
 import android.app.TimePickerDialog
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Download
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Palette
+import androidx.compose.material.icons.filled.Save
 import androidx.compose.material.icons.filled.Share
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Upload
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.interim.hours.ui.theme.ThemeMode
 import java.text.DecimalFormat
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -33,6 +44,30 @@ fun SettingsScreen(
     val notificationMinute by viewModel.notificationMinute.collectAsState()
 
     val timeFormatter = remember { DecimalFormat("00") }
+
+    val exportLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.CreateDocument("application/json")
+    ) { uri ->
+        uri?.let {
+            viewModel.exportBackupJson(it) { success ->
+                if (success) {
+                    android.widget.Toast.makeText(context, "Données exportées avec succès !", android.widget.Toast.LENGTH_LONG).show()
+                } else {
+                    android.widget.Toast.makeText(context, "Échec de l'exportation des données", android.widget.Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+    }
+
+    val importLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.OpenDocument()
+    ) { uri ->
+        uri?.let {
+            viewModel.importBackupJson(it) { success, message ->
+                android.widget.Toast.makeText(context, message, android.widget.Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
     fun openTimePicker() {
         TimePickerDialog(
@@ -134,7 +169,7 @@ fun SettingsScreen(
                 }
             }
 
-            // Export CSV section
+            // Apparence / Thème section
             Card(
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
@@ -145,21 +180,198 @@ fun SettingsScreen(
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        Icon(Icons.Default.Share, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                        Text("Export de Données", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                        Icon(Icons.Default.Palette, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+                        Text("Apparence", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text("Thème de l'application", fontWeight = FontWeight.SemiBold)
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    var expanded by remember { mutableStateOf(false) }
+                    val currentTheme by viewModel.appTheme.collectAsState()
+                    val themeLabels = mapOf(
+                        ThemeMode.SYSTEM to "Système",
+                        ThemeMode.LIGHT to "Clair",
+                        ThemeMode.DARK to "Sombre"
+                    )
+
+                    ExposedDropdownMenuBox(
+                        expanded = expanded,
+                        onExpandedChange = { expanded = !expanded }
+                    ) {
+                        OutlinedTextField(
+                            value = themeLabels[currentTheme] ?: "Système",
+                            onValueChange = {},
+                            readOnly = true,
+                            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
+                            colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .menuAnchor()
+                        )
+                        ExposedDropdownMenu(
+                            expanded = expanded,
+                            onDismissRequest = { expanded = false }
+                        ) {
+                            ThemeMode.values().forEach { mode ->
+                                DropdownMenuItem(
+                                    text = { Text(themeLabels[mode] ?: mode.name) },
+                                    onClick = {
+                                        viewModel.setAppTheme(mode)
+                                        expanded = false
+                                    }
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Objectifs Mensuels Card
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(Icons.Default.Edit, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+                        Text("Objectif Mensuel", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    Text("Type d'objectif", fontWeight = FontWeight.SemiBold)
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    val currentTargetType by viewModel.targetType.collectAsState()
+                    val targetValueHours by viewModel.targetValueHours.collectAsState()
+                    val targetValueEarnings by viewModel.targetValueEarnings.collectAsState()
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        FilterChip(
+                            selected = currentTargetType == "HOURS",
+                            onClick = { viewModel.setTargetType("HOURS") },
+                            label = { Text("Heures") }
+                        )
+                        FilterChip(
+                            selected = currentTargetType == "EARNINGS",
+                            onClick = { viewModel.setTargetType("EARNINGS") },
+                            label = { Text("Gains nets (€)") }
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    if (currentTargetType == "HOURS") {
+                        var hoursText by remember(targetValueHours) { mutableStateOf(targetValueHours.toString()) }
+                        OutlinedTextField(
+                            value = hoursText,
+                            onValueChange = { newValue ->
+                                hoursText = newValue
+                                newValue.toFloatOrNull()?.let {
+                                    viewModel.setTargetValueHours(it)
+                                }
+                            },
+                            label = { Text("Objectif d'heures (h)") },
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Number,
+                                imeAction = ImeAction.Done
+                            ),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    } else {
+                        var earningsText by remember(targetValueEarnings) { mutableStateOf(targetValueEarnings.toString()) }
+                        OutlinedTextField(
+                            value = earningsText,
+                            onValueChange = { newValue ->
+                                earningsText = newValue
+                                newValue.toFloatOrNull()?.let {
+                                    viewModel.setTargetValueEarnings(it)
+                                }
+                            },
+                            label = { Text("Objectif de gains nets (€)") },
+                            keyboardOptions = KeyboardOptions(
+                                keyboardType = KeyboardType.Number,
+                                imeAction = ImeAction.Done
+                            ),
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                }
+            }
+
+            // Local Backup Card
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(Icons.Default.Save, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+                        Text("Sauvegarder ses données", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                     }
 
                     Spacer(modifier = Modifier.height(16.dp))
 
                     Text(
-                        "Exportez l'intégralité de vos heures et primes saisies dans un format CSV compatible avec Excel.",
+                        "Exportez ou importez vos données locales au format JSON pour les sauvegarder ou les transférer vers un autre appareil.",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
 
-                    Spacer(modifier = Modifier.height(12.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
-                    Button(
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Button(
+                            onClick = {
+                                exportLauncher.launch("work_log_backup.json")
+                            },
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Icon(Icons.Default.Download, contentDescription = null, modifier = Modifier.size(18.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text("Exporter", style = MaterialTheme.typography.bodyMedium)
+                        }
+
+                        Button(
+                            onClick = {
+                                importLauncher.launch(arrayOf("application/json", "application/octet-stream", "*/*"))
+                            },
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Icon(Icons.Default.Upload, contentDescription = null, modifier = Modifier.size(18.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text("Importer", style = MaterialTheme.typography.bodyMedium)
+                        }
+                    }
+
+                    Divider(modifier = Modifier.padding(vertical = 12.dp))
+
+                    Text(
+                        "Exportez vos heures et primes au format CSV (compatible Excel).",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    OutlinedButton(
                         onClick = {
                             viewModel.exportToCSV { intent ->
                                 context.startActivity(intent)

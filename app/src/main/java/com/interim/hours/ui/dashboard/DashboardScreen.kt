@@ -113,8 +113,7 @@ fun DashboardScreen(
             // Monthly progress target graphic
             item {
                 MonthlyProgressCard(
-                    hours = stats.monthlyHours,
-                    target = 151.67 // Standard French full-time hours (35h/week)
+                    stats = stats
                 )
             }
 
@@ -274,11 +273,14 @@ fun StatCard(
 
 @Composable
 fun MonthlyProgressCard(
-    hours: Double,
-    target: Double,
+    stats: DashboardViewModel.DashboardStats,
     modifier: Modifier = Modifier
 ) {
-    val progress = (hours / target).coerceIn(0.0, 1.0).toFloat()
+    val isHours = stats.targetType == "HOURS"
+    val target = if (isHours) stats.targetValueHours.toDouble() else stats.targetValueEarnings.toDouble()
+    val value = if (isHours) stats.monthlyHours else stats.monthlyEarnings
+
+    val progress = if (target > 0.0) (value / target).coerceIn(0.0, 1.0).toFloat() else 0f
     val percentage = (progress * 100).toInt()
 
     Card(
@@ -301,13 +303,22 @@ fun MonthlyProgressCard(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Standard : ${target} h (temps plein)",
+                    text = if (isHours) {
+                        "Cible : ${String.format(Locale.FRANCE, "%.1f", target)} h"
+                    } else {
+                        "Cible : ${String.format(Locale.FRANCE, "%.2f", target)} € (Net estimé)"
+                    },
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 Spacer(modifier = Modifier.height(12.dp))
                 Text(
-                    text = "${String.format("%.1f", hours)}h sur ${target}h réalisées",
+                    text = if (isHours) {
+                        "${String.format(Locale.FRANCE, "%.1f", value)}h sur ${String.format(Locale.FRANCE, "%.1f", target)}h réalisées"
+                    } else {
+                        val netValue = value * 0.77
+                        "${String.format(Locale.FRANCE, "%.2f", netValue)}€ sur ${String.format(Locale.FRANCE, "%.2f", target)}€ net estimés"
+                    },
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.primary
@@ -323,6 +334,14 @@ fun MonthlyProgressCard(
             ) {
                 val primaryColor = MaterialTheme.colorScheme.primary
                 val outlineColor = MaterialTheme.colorScheme.surfaceVariant
+                
+                val finalProgress = if (isHours) {
+                    progress
+                } else {
+                    if (target > 0.0) ((value * 0.77) / target).coerceIn(0.0, 1.0).toFloat() else 0f
+                }
+                val finalPercentage = (finalProgress * 100).toInt()
+
                 Canvas(modifier = Modifier.fillMaxSize()) {
                     drawCircle(
                         color = outlineColor,
@@ -331,13 +350,13 @@ fun MonthlyProgressCard(
                     drawArc(
                         color = primaryColor,
                         startAngle = -90f,
-                        sweepAngle = progress * 360f,
+                        sweepAngle = finalProgress * 360f,
                         useCenter = false,
                         style = Stroke(width = 8.dp.toPx(), cap = StrokeCap.Round)
                     )
                 }
                 Text(
-                    text = "${percentage}%",
+                    text = "${finalPercentage}%",
                     fontWeight = FontWeight.Bold,
                     fontSize = 16.sp,
                     color = MaterialTheme.colorScheme.onSurface
