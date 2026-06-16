@@ -42,6 +42,7 @@ fun WorkDayDialog(
     initialDateMillis: Long? = null
 ) {
     val context = LocalContext.current
+    val haptic = androidx.compose.ui.platform.LocalHapticFeedback.current
     val dateFormatter = remember { SimpleDateFormat("dd MMMM yyyy", Locale.FRANCE) }
     val timeFormatter = remember { SimpleDateFormat("HH:mm", Locale.FRANCE) }
 
@@ -456,6 +457,7 @@ fun WorkDayDialog(
                                             breakMinutes = breakMinutes,
                                             comment = comment
                                         )
+                                        haptic.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.LongPress)
                                         onSave(workDay, workdayBonuses.toList())
                                     } else {
                                         showError = true

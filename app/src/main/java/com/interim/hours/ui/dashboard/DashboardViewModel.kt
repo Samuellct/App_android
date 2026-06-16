@@ -70,6 +70,7 @@ class DashboardViewModel @Inject constructor(
         var weeklyEarnings = 0.0
         var monthlyEarnings = 0.0
 
+        // 1. Calculate daily earnings and hours
         workDays.forEach { item ->
             val day = item.workDay
             val durationHours = (day.endTimeMillis - day.startTimeMillis - day.breakMinutes * 60000.0) / 3600000.0
@@ -84,6 +85,28 @@ class DashboardViewModel @Inject constructor(
             if (day.dateMillis >= startOfWeek) {
                 weeklyHours += cleanDuration
                 weeklyEarnings += dayEarnings
+            }
+        }
+
+        // 2. Group by calendar week to calculate weekly overtime premiums
+        val daysGroupedByWeek = workDays.groupBy { item ->
+            com.interim.hours.utils.SalaryCalculator.getYearAndWeek(item.workDay.dateMillis)
+        }
+
+        daysGroupedByWeek.forEach { (_, weekDaysList) ->
+            val overtimePremium = com.interim.hours.utils.SalaryCalculator.calculateWeeklyOvertimePremium(weekDaysList)
+            if (overtimePremium > 0.0) {
+                // If any workday in this week is in the current week, add to weekly earnings
+                val hasDayInCurrentWeek = weekDaysList.any { it.workDay.dateMillis >= startOfWeek }
+                if (hasDayInCurrentWeek) {
+                    weeklyEarnings += overtimePremium
+                }
+
+                // If any workday in this week is in the current month, add to monthly earnings
+                val hasDayInCurrentMonth = weekDaysList.any { it.workDay.dateMillis >= startOfMonth }
+                if (hasDayInCurrentMonth) {
+                    monthlyEarnings += overtimePremium
+                }
             }
         }
 

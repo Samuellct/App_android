@@ -162,6 +162,92 @@ fun SettingsScreen(
                 }
             }
 
+            // Privacy policy section
+            var showPrivacyDialog by remember { mutableStateOf(false) }
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(Icons.Default.Info, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
+                        Text("Confidentialité", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Text(
+                        "Vos données sont stockées à 100% localement sur votre téléphone. L'application ne collecte aucune donnée personnelle.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    OutlinedButton(
+                        onClick = { showPrivacyDialog = true },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text("Voir la Politique de Confidentialité")
+                    }
+                }
+            }
+
+            if (showPrivacyDialog) {
+                AlertDialog(
+                    onDismissRequest = { showPrivacyDialog = false },
+                    title = { Text("Politique de Confidentialité", fontWeight = FontWeight.Bold) },
+                    text = {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(max = 300.dp)
+                                .verticalScroll(rememberScrollState()),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Text(
+                                text = "Work Log - Protection de la vie privée\n" +
+                                        "Dernière mise à jour : 16 juin 2026\n\n" +
+                                        "L'application Work Log fonctionne de manière 100% locale (offline-first).",
+                                fontWeight = FontWeight.Bold,
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                            Text(
+                                text = "1. Pas de transmission réseau :\n" +
+                                        "L'application ne collecte, ne transmet et ne partage aucune donnée personnelle avec des serveurs tiers. Tout reste stocké sur votre téléphone.\n\n" +
+                                        "2. Stockage local :\n" +
+                                        "Vos heures de travail, vos missions et vos primes sont sauvegardées de façon strictement confidentielle dans la base de données interne de votre appareil.\n\n" +
+                                        "3. Sauvegarde Google Auto Backup :\n" +
+                                        "Si configurée, vos données locales sont chiffrées et sauvegardées de manière sécurisée sur votre espace personnel Google Drive pour être restaurées en cas de réinstallation. Aucun tiers n'a accès à ces données.\n\n" +
+                                        "4. Permissions :\n" +
+                                        "- Notifications : Envoyées uniquement pour le rappel journalier de saisie.\n" +
+                                        "- Vibreur : Retour haptique de validation.",
+                                style = MaterialTheme.typography.bodySmall
+                            )
+                        }
+                    },
+                    confirmButton = {
+                        TextButton(onClick = { showPrivacyDialog = false }) {
+                            Text("Fermer")
+                        }
+                    },
+                    dismissButton = {
+                        val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
+                        TextButton(
+                            onClick = {
+                                uriHandler.openUri("https://github.com/Samuellct/App_android/blob/main/PRIVACY_POLICY.md")
+                            }
+                        ) {
+                            Text("Ouvrir en ligne")
+                        }
+                    }
+                )
+            }
+
             // Info section
             Card(
                 shape = RoundedCornerShape(16.dp),

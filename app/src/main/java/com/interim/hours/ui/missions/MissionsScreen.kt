@@ -384,6 +384,12 @@ fun MissionEditDialog(
     var nightEndHour by remember { mutableStateOf(missionWithBonuses?.mission?.nightEndHour?.toString() ?: "6") }
     var nightRatePercentage by remember { mutableStateOf(missionWithBonuses?.mission?.nightRatePercentage?.toString() ?: "0.0") }
     var hasIfmIccp by remember { mutableStateOf(missionWithBonuses?.mission?.hasIfmIccp ?: true) }
+    
+    var hasWeeklyOvertime by remember { mutableStateOf(missionWithBonuses?.mission?.hasWeeklyOvertime ?: true) }
+    var weeklyOvertimeThreshold by remember { mutableStateOf(missionWithBonuses?.mission?.weeklyOvertimeThreshold?.toString() ?: "35") }
+    var overtimeRate1Percentage by remember { mutableStateOf(missionWithBonuses?.mission?.overtimeRate1Percentage?.toString() ?: "25.0") }
+    var overtimeRate2Percentage by remember { mutableStateOf(missionWithBonuses?.mission?.overtimeRate2Percentage?.toString() ?: "50.0") }
+    
     var showCustomColorPicker by remember { mutableStateOf(false) }
 
     // Bonuses manager
@@ -535,6 +541,65 @@ fun MissionEditDialog(
                     }
 
                     item {
+                        Divider()
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column(modifier = Modifier.weight(1.5f)) {
+                                Text("Heures supplémentaires hebdo", fontWeight = FontWeight.Bold, style = MaterialTheme.typography.bodyMedium)
+                                Text(
+                                    "Calcule les majorations hebdos (au-delà de 35h).",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                            Switch(
+                                checked = hasWeeklyOvertime,
+                                onCheckedChange = { hasWeeklyOvertime = it }
+                            )
+                        }
+                    }
+
+                    if (hasWeeklyOvertime) {
+                        item {
+                            OutlinedTextField(
+                                value = weeklyOvertimeThreshold,
+                                onValueChange = { weeklyOvertimeThreshold = it },
+                                label = { Text("Seuil heures sup. (heures/semaine)") },
+                                placeholder = { Text("35") },
+                                modifier = Modifier.fillMaxWidth(),
+                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                            )
+                        }
+                        item {
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
+                                OutlinedTextField(
+                                    value = overtimeRate1Percentage,
+                                    onValueChange = { overtimeRate1Percentage = it },
+                                    label = { Text("Majoration Taux 1 (%)") },
+                                    placeholder = { Text("25.0") },
+                                    modifier = Modifier.weight(1f),
+                                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                                )
+                                OutlinedTextField(
+                                    value = overtimeRate2Percentage,
+                                    onValueChange = { overtimeRate2Percentage = it },
+                                    label = { Text("Majoration Taux 2 (%)") },
+                                    placeholder = { Text("50.0") },
+                                    modifier = Modifier.weight(1f),
+                                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                                )
+                            }
+                        }
+                    }
+
+                    item {
                         Text("Couleur de la mission", style = MaterialTheme.typography.titleSmall)
                         Spacer(modifier = Modifier.height(8.dp))
                         Row(
@@ -670,6 +735,9 @@ fun MissionEditDialog(
                                 val nightStart = nightStartHour.toIntOrNull() ?: 21
                                 val nightEnd = nightEndHour.toIntOrNull() ?: 6
                                 val nightRate = nightRatePercentage.toDoubleOrNull() ?: 0.0
+                                val threshold = weeklyOvertimeThreshold.toDoubleOrNull() ?: 35.0
+                                val rate1 = overtimeRate1Percentage.toDoubleOrNull() ?: 25.0
+                                val rate2 = overtimeRate2Percentage.toDoubleOrNull() ?: 50.0
 
                                 if (company.isNotBlank() && agency.isNotBlank() && rate != null) {
                                     val mission = Mission(
@@ -684,7 +752,11 @@ fun MissionEditDialog(
                                         nightStartHour = nightStart,
                                         nightEndHour = nightEnd,
                                         nightRatePercentage = nightRate,
-                                        hasIfmIccp = hasIfmIccp
+                                        hasIfmIccp = hasIfmIccp,
+                                        hasWeeklyOvertime = hasWeeklyOvertime,
+                                        weeklyOvertimeThreshold = threshold,
+                                        overtimeRate1Percentage = rate1,
+                                        overtimeRate2Percentage = rate2
                                     )
                                     onSave(mission, defaultBonuses.toList())
                                 } else {

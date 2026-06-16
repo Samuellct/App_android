@@ -15,9 +15,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.content.Intent
 import com.interim.hours.data.model.WorkDayWithDetails
 import com.interim.hours.ui.calendar.CalendarDayWorkItem
 import com.interim.hours.ui.missions.toColor
@@ -141,13 +143,40 @@ fun HistoryScreen(
                 } else {
                     groupedWorkDays.forEach { (monthStr, daysList) ->
                         item {
-                            Text(
-                                text = monthStr,
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.primary,
-                                modifier = Modifier.padding(vertical = 8.dp)
-                            )
+                            val context = LocalContext.current
+                            Row(
+                                modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    text = monthStr,
+                                    style = MaterialTheme.typography.titleMedium,
+                                    fontWeight = FontWeight.Bold,
+                                    color = MaterialTheme.colorScheme.primary
+                                )
+                                TextButton(
+                                    onClick = {
+                                        com.interim.hours.utils.PdfExporter.exportMonthlyPdf(
+                                            context = context,
+                                            monthStr = monthStr,
+                                            workDays = daysList
+                                        ) { intent ->
+                                            val chooser = Intent.createChooser(intent, "Partager le relevé PDF")
+                                            context.startActivity(chooser)
+                                        }
+                                    }
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.PictureAsPdf,
+                                        contentDescription = null,
+                                        modifier = Modifier.size(16.dp),
+                                        tint = MaterialTheme.colorScheme.primary
+                                    )
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text("Relevé PDF", style = MaterialTheme.typography.labelMedium)
+                                }
+                            }
                         }
 
                         items(daysList, key = { it.workDay.id }) { item ->

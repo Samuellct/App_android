@@ -14,7 +14,7 @@ import com.interim.hours.data.model.WorkDayBonus
         WorkDay::class,
         WorkDayBonus::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {

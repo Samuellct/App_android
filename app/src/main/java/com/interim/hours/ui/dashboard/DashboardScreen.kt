@@ -88,9 +88,9 @@ fun DashboardScreen(
                         modifier = Modifier.weight(1f)
                     )
                     StatCard(
-                        title = "Revenu estimé (Brut)",
+                        title = "Revenu mensuel (Brut)",
                         value = String.format("%.2f €", stats.monthlyEarnings),
-                        subValue = "Semaine: ${String.format("%.2f €", stats.weeklyEarnings)}",
+                        subValue = "Net: ~${String.format("%.2f €", stats.monthlyEarnings * 0.77)} | Sem: ${String.format("%.1f € B", stats.weeklyEarnings)}",
                         icon = Icons.Default.Euro,
                         gradient = GradientTealGreen,
                         modifier = Modifier.weight(1f)
@@ -389,10 +389,15 @@ fun RecentDayItem(
 
             Column(horizontalAlignment = Alignment.End) {
                 Text(
-                    text = String.format("%.2f €", earnings),
+                    text = String.format("%.2f € Brut", earnings),
                     fontWeight = FontWeight.Black,
                     color = SuccessGreen,
                     style = MaterialTheme.typography.bodyLarge
+                )
+                Text(
+                    text = String.format("~%.2f € Net", earnings * 0.77),
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 Text(
                     text = "${String.format("%.1f", cleanDuration)}h worked",

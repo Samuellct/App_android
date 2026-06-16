@@ -423,10 +423,15 @@ fun CalendarDayWorkItem(
 
                 Column(horizontalAlignment = Alignment.End) {
                     Text(
-                        text = String.format("%.2f €", earnings),
+                        text = String.format("%.2f € Brut", earnings),
                         fontWeight = FontWeight.Black,
                         color = SuccessGreen,
                         style = MaterialTheme.typography.bodyLarge
+                    )
+                    Text(
+                        text = String.format("~%.2f € Net", earnings * 0.77),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     if (dayWithDetails.bonuses.isNotEmpty()) {
                         Text(

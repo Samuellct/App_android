@@ -18,7 +18,11 @@ data class Mission(
     val nightStartHour: Int = 21,
     val nightEndHour: Int = 6,
     val nightRatePercentage: Double = 0.0,
-    val hasIfmIccp: Boolean = true
+    val hasIfmIccp: Boolean = true,
+    val hasWeeklyOvertime: Boolean = true,
+    val weeklyOvertimeThreshold: Double = 35.0,
+    val overtimeRate1Percentage: Double = 25.0,
+    val overtimeRate2Percentage: Double = 50.0
 )
 
 @Entity(
