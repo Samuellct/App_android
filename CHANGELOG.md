@@ -1,4 +1,14 @@
 
+## [v2.0.1] - 2026-06-16
+### [2.0.1](https://github.com/Samuellct/App_android/compare/v2.0.0...v2.0.1) (2026-06-16)
+
+
+### Bug Fixes
+
+* enhance Glance widget layout, responsiveness, and real-time updates ([ef2c6dc](https://github.com/Samuellct/App_android/commit/ef2c6dc9b286339f5cf2c1958c3fee06e52d8d96))
+
+
+
 ## [v2.0.0] - 2026-06-16
 ## [2.0.0](https://github.com/Samuellct/App_android/compare/v1.0.1...v2.0.0) (2026-06-16)
 
