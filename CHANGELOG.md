@@ -1,4 +1,9 @@
 
+## [v0.1.2] - 2026-06-16
+### [0.1.2](https://github.com/Samuellct/App_android/compare/v0.1.1...v0.1.2) (2026-06-16)
+
+
+
 ## [v0.1.0] - 2026-06-16
 ## [0.1.0](https://github.com/Samuellct/App_android/compare/v0.0.1...v0.1.0) (2026-06-16)
 
