@@ -17,6 +17,9 @@ import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.color.ColorProvider
+import androidx.glance.action.actionStartActivity
+import androidx.glance.action.clickable
+import com.interim.hours.ui.MainActivity
 import com.interim.hours.data.database.WorkDayDao
 import com.interim.hours.utils.SalaryCalculator
 import dagger.hilt.EntryPoint
@@ -103,7 +106,7 @@ fun GlanceWidgetContent(
     
     val labelStyle = TextStyle(
         color = ColorProvider(day = Color(0xFF64748B), night = Color(0xFF94A3B8)),
-        fontSize = 11.sp,
+        fontSize = 12.sp,
         fontWeight = FontWeight.Medium
     )
     
@@ -111,24 +114,35 @@ fun GlanceWidgetContent(
     val hoursValueStyle = TextStyle(
         color = ColorProvider(day = Color(0xFF4F46E5), night = Color(0xFF818CF8)),
         fontWeight = FontWeight.Bold,
-        fontSize = 18.sp
+        fontSize = 22.sp
     )
     
     // Vert/teal for Earnings
     val earningsValueStyle = TextStyle(
         color = ColorProvider(day = Color(0xFF10B981), night = Color(0xFF2DD4BF)),
         fontWeight = FontWeight.Bold,
-        fontSize = 18.sp
+        fontSize = 22.sp
     )
     
     val dividerColor = ColorProvider(day = Color(0xFFE2E8F0), night = Color(0xFF334155))
+
+    // Format the current month in French
+    val currentMonthName = Calendar.getInstance().getDisplayName(
+        Calendar.MONTH,
+        Calendar.LONG,
+        java.util.Locale.FRANCE
+    )?.replaceFirstChar { if (it.isLowerCase()) it.titlecase(java.util.Locale.FRANCE) else it.toString() } ?: ""
+    val firstChar = currentMonthName.firstOrNull()?.lowercaseChar()
+    val prefix = if (firstChar in setOf('a', 'e', 'i', 'o', 'u', 'y', 'é', 'è', 'à', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ä', 'ë', 'ï', 'ö', 'ü')) "d'" else "de "
+    val statsTitle = "Stats $prefix$currentMonthName"
 
     Column(
         modifier = GlanceModifier
             .fillMaxSize()
             .appWidgetBackground()
             .background(backgroundColor)
-            .padding(12.dp),
+            .padding(12.dp)
+            .clickable(actionStartActivity<MainActivity>()),
         verticalAlignment = Alignment.Vertical.CenterVertically,
         horizontalAlignment = Alignment.Horizontal.CenterHorizontally
     ) {
@@ -138,9 +152,17 @@ fun GlanceWidgetContent(
                 color = titleColor,
                 fontWeight = FontWeight.Bold,
                 fontSize = 14.sp
-            ),
-            modifier = GlanceModifier.padding(bottom = 10.dp)
+            )
         )
+        
+        Spacer(modifier = GlanceModifier.height(2.dp))
+        
+        Text(
+            text = statsTitle,
+            style = labelStyle
+        )
+
+        Spacer(modifier = GlanceModifier.height(14.dp))
 
         Row(
             modifier = GlanceModifier.fillMaxWidth(),
@@ -151,11 +173,6 @@ fun GlanceWidgetContent(
                 modifier = GlanceModifier.defaultWeight().padding(horizontal = 2.dp),
                 horizontalAlignment = Alignment.Horizontal.CenterHorizontally
             ) {
-                Text(
-                    text = "Heures ce mois",
-                    style = labelStyle
-                )
-                Spacer(modifier = GlanceModifier.height(2.dp))
                 Text(
                     text = String.format(java.util.Locale.FRANCE, "%.1f h", monthlyHours),
                     style = hoursValueStyle
@@ -173,11 +190,6 @@ fun GlanceWidgetContent(
                 modifier = GlanceModifier.defaultWeight().padding(horizontal = 2.dp),
                 horizontalAlignment = Alignment.Horizontal.CenterHorizontally
             ) {
-                Text(
-                    text = "Salaire Net est.",
-                    style = labelStyle
-                )
-                Spacer(modifier = GlanceModifier.height(2.dp))
                 Text(
                     text = String.format(java.util.Locale.FRANCE, "%.2f €", netEarnings),
                     style = earningsValueStyle
