@@ -1,4 +1,14 @@
 
+## [v2.0.2] - 2026-06-16
+### [2.0.2](https://github.com/Samuellct/App_android/compare/v2.0.1...v2.0.2) (2026-06-16)
+
+
+### Bug Fixes
+
+* refactor Glance widget layout spacing, accessibility, dynamic font scaling, and data refresh logic ([57caf02](https://github.com/Samuellct/App_android/commit/57caf02ff0f9a11f0bbda8781fd6da83a0f85e8b))
+
+
+
 ## [v2.0.1] - 2026-06-16
 ### [2.0.1](https://github.com/Samuellct/App_android/compare/v2.0.0...v2.0.1) (2026-06-16)
 
