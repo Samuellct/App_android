@@ -2,6 +2,7 @@ package com.interim.hours.ui.settings
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.*
@@ -28,6 +29,36 @@ class SettingsViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val sharedPrefs = context.getSharedPreferences("settings_prefs", Context.MODE_PRIVATE)
+
+    private val prefListener = SharedPreferences.OnSharedPreferenceChangeListener { prefs, key ->
+        when (key) {
+            "app_theme" -> {
+                val themeStr = prefs.getString("app_theme", ThemeMode.SYSTEM.name) ?: ThemeMode.SYSTEM.name
+                _appTheme.value = ThemeMode.valueOf(themeStr)
+            }
+            "notifications_enabled" -> {
+                _notificationsEnabled.value = prefs.getBoolean("notifications_enabled", true)
+            }
+            "notification_hour" -> {
+                _notificationHour.value = prefs.getInt("notification_hour", 19)
+            }
+            "notification_minute" -> {
+                _notificationMinute.value = prefs.getInt("notification_minute", 0)
+            }
+            "target_type" -> {
+                _targetType.value = prefs.getString("target_type", "HOURS") ?: "HOURS"
+            }
+            "target_value_hours" -> {
+                _targetValueHours.value = prefs.getFloat("target_value_hours", 151.67f)
+            }
+            "target_value_earnings" -> {
+                _targetValueEarnings.value = prefs.getFloat("target_value_earnings", 1800f)
+            }
+            "has_completed_onboarding" -> {
+                _hasCompletedOnboarding.value = prefs.getBoolean("has_completed_onboarding", false)
+            }
+        }
+    }
 
     private val _appTheme = MutableStateFlow(
         ThemeMode.valueOf(sharedPrefs.getString("app_theme", ThemeMode.SYSTEM.name) ?: ThemeMode.SYSTEM.name)
@@ -81,10 +112,16 @@ class SettingsViewModel @Inject constructor(
     val notificationMinute: StateFlow<Int> = _notificationMinute
 
     init {
+        sharedPrefs.registerOnSharedPreferenceChangeListener(prefListener)
         // Schedule reminder on startup if enabled
         if (_notificationsEnabled.value) {
             scheduleReminder(_notificationHour.value, _notificationMinute.value)
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        sharedPrefs.unregisterOnSharedPreferenceChangeListener(prefListener)
     }
 
     fun setNotificationsEnabled(enabled: Boolean) {
@@ -275,7 +312,6 @@ class SettingsViewModel @Inject constructor(
                 } ?: throw Exception("Impossible de lire le flux d'entrée")
 
                 val rootJson = org.json.JSONObject(jsonString)
-                val version = rootJson.optInt("version", 1)
 
                 val missionsArray = rootJson.optJSONArray("missions") ?: org.json.JSONArray()
                 val workDaysArray = rootJson.optJSONArray("workDays") ?: org.json.JSONArray()
