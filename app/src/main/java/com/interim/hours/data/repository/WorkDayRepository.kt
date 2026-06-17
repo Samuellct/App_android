@@ -1,12 +1,11 @@
 package com.interim.hours.data.repository
 
 import android.content.Context
-import androidx.glance.appwidget.updateAll
 import com.interim.hours.data.database.WorkDayDao
 import com.interim.hours.data.model.WorkDay
 import com.interim.hours.data.model.WorkDayBonus
 import com.interim.hours.data.model.WorkDayWithDetails
-import com.interim.hours.widget.WorkLogWidget
+import com.interim.hours.widget.WidgetUpdater
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -28,19 +27,11 @@ class WorkDayRepository @Inject constructor(
 
     suspend fun saveWorkDay(workDay: WorkDay, bonuses: List<WorkDayBonus>) {
         workDayDao.saveWorkDayWithBonuses(workDay, bonuses)
-        try {
-            WorkLogWidget().updateAll(context)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        WidgetUpdater.triggerUpdate(context)
     }
 
     suspend fun deleteWorkDay(workDay: WorkDay) {
         workDayDao.deleteWorkDay(workDay)
-        try {
-            WorkLogWidget().updateAll(context)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        WidgetUpdater.triggerUpdate(context)
     }
 }

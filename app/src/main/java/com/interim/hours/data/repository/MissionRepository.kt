@@ -1,12 +1,11 @@
 package com.interim.hours.data.repository
 
 import android.content.Context
-import androidx.glance.appwidget.updateAll
 import com.interim.hours.data.database.MissionDao
 import com.interim.hours.data.model.Mission
 import com.interim.hours.data.model.MissionBonus
 import com.interim.hours.data.model.MissionWithBonuses
-import com.interim.hours.widget.WorkLogWidget
+import com.interim.hours.widget.WidgetUpdater
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -27,28 +26,16 @@ class MissionRepository @Inject constructor(
 
     suspend fun saveMission(mission: Mission, bonuses: List<MissionBonus>) {
         missionDao.saveMissionWithBonuses(mission, bonuses)
-        try {
-            WorkLogWidget().updateAll(context)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        WidgetUpdater.triggerUpdate(context)
     }
 
     suspend fun deleteMission(mission: Mission) {
         missionDao.deleteMission(mission)
-        try {
-            WorkLogWidget().updateAll(context)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        WidgetUpdater.triggerUpdate(context)
     }
 
     suspend fun updateMission(mission: Mission) {
         missionDao.updateMission(mission)
-        try {
-            WorkLogWidget().updateAll(context)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        WidgetUpdater.triggerUpdate(context)
     }
 }

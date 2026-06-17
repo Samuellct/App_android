@@ -171,7 +171,7 @@ fun GlanceWidgetContent(
             )
         )
         
-        Spacer(modifier = GlanceModifier.height(2.dp))
+        Spacer(modifier = GlanceModifier.height(6.dp))
         
         Text(
             text = statsTitle,
@@ -194,12 +194,17 @@ fun GlanceWidgetContent(
                     text = hoursStr,
                     style = hoursValueStyle.copy(fontSize = hoursFontSize)
                 )
+                Spacer(modifier = GlanceModifier.height(2.dp))
+                Text(
+                    text = "heures",
+                    style = labelStyle.copy(fontSize = 11.sp)
+                )
             }
 
             Box(
                 modifier = GlanceModifier
                     .width(1.5.dp)
-                    .height(30.dp)
+                    .height(35.dp)
                     .background(dividerColor)
             ) {}
 
@@ -210,6 +215,11 @@ fun GlanceWidgetContent(
                 Text(
                     text = earningsStr,
                     style = earningsValueStyle.copy(fontSize = earningsFontSize)
+                )
+                Spacer(modifier = GlanceModifier.height(2.dp))
+                Text(
+                    text = "est. net",
+                    style = labelStyle.copy(fontSize = 11.sp)
                 )
             }
         }

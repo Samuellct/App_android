@@ -39,6 +39,14 @@ fun SettingsScreen(
     onBackClick: (() -> Unit)? = null
 ) {
     val context = LocalContext.current
+    val versionName = remember {
+        try {
+            val packageInfo = context.packageManager.getPackageInfo(context.packageName, 0)
+            packageInfo.versionName ?: "1.0"
+        } catch (e: Exception) {
+            "1.0"
+        }
+    }
     val notificationsEnabled by viewModel.notificationsEnabled.collectAsState()
     val notificationHour by viewModel.notificationHour.collectAsState()
     val notificationMinute by viewModel.notificationMinute.collectAsState()
@@ -490,7 +498,7 @@ fun SettingsScreen(
                     Spacer(modifier = Modifier.height(12.dp))
 
                     Text(
-                        "Work Log V1.0\nDéveloppé pour simplifier le suivi d'activité des intérimaires.",
+                        "Work Log V$versionName\nDéveloppé pour simplifier le suivi d'activité des intérimaires.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
