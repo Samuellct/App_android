@@ -51,13 +51,26 @@
         <receiver
             android:name=".widget.WorkLogWidgetReceiver"
             android:exported="true"
-            android:label="Work Log Widget">
+            android:label="Work Log Widget (Horizontal)">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
+        </receiver>
+
+        <!-- Home Screen Glance Widget (Vertical) -->
+        <receiver
+            android:name=".widget.WorkLogVerticalWidgetReceiver"
+            android:exported="true"
+            android:label="Work Log Widget (Vertical)">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_vertical_info" />
         </receiver>
     </application>
 

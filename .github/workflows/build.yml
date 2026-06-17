@@ -32,9 +32,6 @@ jobs:
     - name: Run Unit Tests
       run: ./gradlew testDebugUnitTest
 
-    - name: Build Debug & Release APKs
-      run: ./gradlew assembleDebug assembleRelease
-
     # Compute and push new Semantic Version Tag based on Conventional Commits
     - name: Bump version and push tag
       id: bump_version
@@ -42,6 +39,18 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         default_bump: patch
+
+    - name: Inject Version in build.gradle.kts
+      run: |
+        VERSION="${{ steps.bump_version.outputs.new_version }}"
+        if [ -n "$VERSION" ]; then
+          echo "Injecting version v$VERSION into build.gradle.kts..."
+          sed -i 's/versionName = "[^"]*"/versionName = "'"$VERSION"'"/g' app/build.gradle.kts
+        fi
+        cat app/build.gradle.kts | grep "versionName ="
+
+    - name: Build Debug & Release APKs
+      run: ./gradlew assembleDebug assembleRelease
 
     # Rename APK files to include version
     - name: Rename APKs

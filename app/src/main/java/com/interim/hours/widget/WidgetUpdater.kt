@@ -17,6 +17,7 @@ object WidgetUpdater {
                 delay(300) // Debounce window of 300ms
                 try {
                     WorkLogWidget().updateAll(appContext)
+                    WorkLogVerticalWidget().updateAll(appContext)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
