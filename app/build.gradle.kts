@@ -32,12 +32,22 @@ android {
 
     signingConfigs {
         create("release") {
-            val keystorePath = keystoreProperties.getProperty("keystore.file")
-            if (keystorePath != null && file(keystorePath).exists()) {
-                storeFile = file(keystorePath)
-                storePassword = keystoreProperties.getProperty("keystore.password")
-                keyAlias = keystoreProperties.getProperty("keystore.alias")
-                keyPassword = keystoreProperties.getProperty("keystore.alias_password")
+            val envFile = System.getenv("KEYSTORE_FILE")
+            val envPassword = System.getenv("KEYSTORE_PASSWORD")
+            val envAlias = System.getenv("KEY_ALIAS")
+            val envAliasPassword = System.getenv("KEY_PASSWORD")
+
+            val keystoreFile = when {
+                !envFile.isNullOrEmpty() -> file(envFile)
+                keystoreProperties.containsKey("keystore.file") -> file(keystoreProperties.getProperty("keystore.file"))
+                else -> rootProject.file("work_log_keystore.jks")
+            }
+
+            if (keystoreFile.exists()) {
+                storeFile = keystoreFile
+                storePassword = if (!envPassword.isNullOrEmpty()) envPassword else (keystoreProperties.getProperty("keystore.password") ?: "worklogpass")
+                keyAlias = if (!envAlias.isNullOrEmpty()) envAlias else (keystoreProperties.getProperty("keystore.alias") ?: "worklog")
+                keyPassword = if (!envAliasPassword.isNullOrEmpty()) envAliasPassword else (keystoreProperties.getProperty("keystore.alias_password") ?: "worklogpass")
             } else {
                 val debugConfig = signingConfigs.getByName("debug")
                 storeFile = debugConfig.storeFile

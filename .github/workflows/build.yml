@@ -51,6 +51,10 @@ jobs:
 
     - name: Build Debug & Release APKs
       run: ./gradlew assembleDebug assembleRelease
+      env:
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
     # Rename APK files to include version
     - name: Rename APKs
