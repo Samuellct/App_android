@@ -1,4 +1,14 @@
 
+## [v2.1.1] - 2026-06-17
+### [2.1.1](https://github.com/Samuellct/App_android/compare/v2.1.0...v2.1.1) (2026-06-17)
+
+
+### Bug Fixes
+
+* align release signing config using keystore to prevent update package conflict ([436f547](https://github.com/Samuellct/App_android/commit/436f547efed89ee35adb3e020c3c1cdd7d6daefd))
+
+
+
 ## [v2.1.0] - 2026-06-17
 ## [2.1.0](https://github.com/Samuellct/App_android/compare/v2.0.3...v2.1.0) (2026-06-17)
 
