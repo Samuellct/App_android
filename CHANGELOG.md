@@ -1,4 +1,14 @@
 
+## [v2.1.0] - 2026-06-17
+## [2.1.0](https://github.com/Samuellct/App_android/compare/v2.0.3...v2.1.0) (2026-06-17)
+
+
+### Features
+
+* implement vertical widget option, update workflow version injection ([4ebefbc](https://github.com/Samuellct/App_android/commit/4ebefbce99d6908338cc071e9f475e362df9d829))
+
+
+
 ## [v2.0.3] - 2026-06-17
 ### [2.0.3](https://github.com/Samuellct/App_android/compare/v2.0.2...v2.0.3) (2026-06-17)
 
