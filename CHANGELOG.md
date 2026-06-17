@@ -1,4 +1,14 @@
 
+## [v2.0.3] - 2026-06-17
+### [2.0.3](https://github.com/Samuellct/App_android/compare/v2.0.2...v2.0.3) (2026-06-17)
+
+
+### Bug Fixes
+
+* resolve widget sync, improve layout spacing, add dynamic font size, and set dynamic settings version ([8204bbf](https://github.com/Samuellct/App_android/commit/8204bbf05c29330293cac6fe5576d9ba11910695))
+
+
+
 ## [v2.0.2] - 2026-06-16
 ### [2.0.2](https://github.com/Samuellct/App_android/compare/v2.0.1...v2.0.2) (2026-06-16)
 
