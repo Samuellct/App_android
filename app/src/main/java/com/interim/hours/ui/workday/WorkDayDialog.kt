@@ -430,25 +430,38 @@ fun WorkDayDialog(
                                 maxLines = 3
                             )
                         }
-
-                        // Validation error message
-                        if (showError && startTimeMillis >= endTimeMillis) {
-                            item {
-                                Text(
-                                    "L'heure de fin doit être après l'heure de début !",
-                                    color = ErrorRed,
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 13.sp
-                                )
-                            }
-                        }
-
                         // Save action
                         item {
                             Spacer(modifier = Modifier.height(16.dp))
                             Button(
                                 onClick = {
-                                    if (startTimeMillis < endTimeMillis && selectedMissionWithBonuses != null) {
+                                    if (selectedMissionWithBonuses != null) {
+                                        val startCal = Calendar.getInstance().apply {
+                                            timeInMillis = dateMillis
+                                            val timeCal = Calendar.getInstance().apply { timeInMillis = startTimeMillis }
+                                            set(Calendar.HOUR_OF_DAY, timeCal.get(Calendar.HOUR_OF_DAY))
+                                            set(Calendar.MINUTE, timeCal.get(Calendar.MINUTE))
+                                            set(Calendar.SECOND, 0)
+                                            set(Calendar.MILLISECOND, 0)
+                                        }
+
+                                        val endCal = Calendar.getInstance().apply {
+                                            timeInMillis = dateMillis
+                                            val timeCal = Calendar.getInstance().apply { timeInMillis = endTimeMillis }
+                                            set(Calendar.HOUR_OF_DAY, timeCal.get(Calendar.HOUR_OF_DAY))
+                                            set(Calendar.MINUTE, timeCal.get(Calendar.MINUTE))
+                                            set(Calendar.SECOND, 0)
+                                            set(Calendar.MILLISECOND, 0)
+                                        }
+
+                                        // If end time is earlier or same as start time, it means the shift spans across midnight (ends next day)
+                                        if (endCal.timeInMillis <= startCal.timeInMillis) {
+                                            endCal.add(Calendar.DAY_OF_YEAR, 1)
+                                        }
+
+                                        val finalStart = startCal.timeInMillis
+                                        val finalEnd = endCal.timeInMillis
+
                                         // Standardize DateMillis to represent only date (ignoring hours/mins/secs) for clean grouping and query support
                                         val dateCalendar = Calendar.getInstance().apply {
                                             timeInMillis = dateMillis
@@ -462,8 +475,8 @@ fun WorkDayDialog(
                                             id = existingWorkDayWithDetails?.workDay?.id ?: 0,
                                             missionId = selectedMissionWithBonuses!!.mission.id,
                                             dateMillis = dateCalendar.timeInMillis,
-                                            startTimeMillis = startTimeMillis,
-                                            endTimeMillis = endTimeMillis,
+                                            startTimeMillis = finalStart,
+                                            endTimeMillis = finalEnd,
                                             breakMinutes = breakMinutes,
                                             comment = comment
                                         )

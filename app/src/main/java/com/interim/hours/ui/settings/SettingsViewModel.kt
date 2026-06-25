@@ -57,7 +57,18 @@ class SettingsViewModel @Inject constructor(
             "has_completed_onboarding" -> {
                 _hasCompletedOnboarding.value = prefs.getBoolean("has_completed_onboarding", false)
             }
+            "chart_duration_months" -> {
+                _chartDurationMonths.value = prefs.getInt("chart_duration_months", 6)
+            }
         }
+    }
+
+    private val _chartDurationMonths = MutableStateFlow(sharedPrefs.getInt("chart_duration_months", 6))
+    val chartDurationMonths: StateFlow<Int> = _chartDurationMonths
+
+    fun setChartDurationMonths(months: Int) {
+        sharedPrefs.edit().putInt("chart_duration_months", months).apply()
+        _chartDurationMonths.value = months
     }
 
     private val _appTheme = MutableStateFlow(
@@ -316,6 +327,11 @@ class SettingsViewModel @Inject constructor(
                 val missionsArray = rootJson.optJSONArray("missions") ?: org.json.JSONArray()
                 val workDaysArray = rootJson.optJSONArray("workDays") ?: org.json.JSONArray()
 
+                // Limit checks for safety against DoS/bloat
+                if (missionsArray.length() > 200 || workDaysArray.length() > 2000) {
+                    throw Exception("Le fichier de sauvegarde dépasse les limites autorisées (max 200 missions et 2000 journées).")
+                }
+
                 var importedMissions = 0
                 var importedWorkDays = 0
 
@@ -326,43 +342,58 @@ class SettingsViewModel @Inject constructor(
                 val existingMissions = missionRepository.getMissionsWithBonusesFlow().first()
                 val existingMissionsMap = existingMissions.associateBy { it.mission.syncId }
 
+                // Regular expression to check hex color validity
+                val colorHexPattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$".toRegex()
+
                 // Insert/Update missions
                 for (i in 0 until missionsArray.length()) {
                     val mJson = missionsArray.getJSONObject(i)
-                    val syncId = mJson.optString("syncId", java.util.UUID.randomUUID().toString())
                     
+                    val company = mJson.optString("company", "").trim()
+                    val agency = mJson.optString("agency", "").trim()
+                    if (company.isEmpty() || agency.isEmpty()) {
+                        continue // Skip invalid missions missing main text details
+                    }
+
+                    val syncId = mJson.optString("syncId", java.util.UUID.randomUUID().toString())
                     val existing = existingMissionsMap[syncId]
                     
+                    val colorHex = mJson.optString("colorHex", "#6366F1")
+                    val cleanColorHex = if (colorHexPattern.matches(colorHex)) colorHex else "#6366F1"
+
                     val mission = com.interim.hours.data.model.Mission(
                         id = existing?.mission?.id ?: 0,
                         syncId = syncId,
-                        company = mJson.getString("company"),
-                        agency = mJson.getString("agency"),
-                        hourlyRate = mJson.getDouble("hourlyRate"),
-                        siteAddress = mJson.getString("siteAddress"),
-                        colorHex = mJson.getString("colorHex"),
+                        company = company,
+                        agency = agency,
+                        hourlyRate = mJson.optDouble("hourlyRate", 12.31).coerceIn(0.0, 500.0),
+                        siteAddress = mJson.optString("siteAddress", ""),
+                        colorHex = cleanColorHex,
                         isActive = mJson.optBoolean("isActive", true),
-                        nightStartHour = mJson.optInt("nightStartHour", 21),
-                        nightEndHour = mJson.optInt("nightEndHour", 6),
-                        nightRatePercentage = mJson.optDouble("nightRatePercentage", 0.0),
+                        nightStartHour = mJson.optInt("nightStartHour", 21).coerceIn(0, 23),
+                        nightEndHour = mJson.optInt("nightEndHour", 6).coerceIn(0, 23),
+                        nightRatePercentage = mJson.optDouble("nightRatePercentage", 0.0).coerceIn(0.0, 200.0),
                         hasIfmIccp = mJson.optBoolean("hasIfmIccp", true),
                         hasWeeklyOvertime = mJson.optBoolean("hasWeeklyOvertime", true),
-                        weeklyOvertimeThreshold = mJson.optDouble("weeklyOvertimeThreshold", 35.0),
-                        overtimeRate1Percentage = mJson.optDouble("overtimeRate1Percentage", 25.0),
-                        overtimeRate2Percentage = mJson.optDouble("overtimeRate2Percentage", 50.0)
+                        weeklyOvertimeThreshold = mJson.optDouble("weeklyOvertimeThreshold", 35.0).coerceIn(10.0, 100.0),
+                        overtimeRate1Percentage = mJson.optDouble("overtimeRate1Percentage", 25.0).coerceIn(0.0, 200.0),
+                        overtimeRate2Percentage = mJson.optDouble("overtimeRate2Percentage", 50.0).coerceIn(0.0, 200.0)
                     )
 
                     val bonusesArray = mJson.optJSONArray("bonuses") ?: org.json.JSONArray()
                     val bonuses = mutableListOf<com.interim.hours.data.model.MissionBonus>()
                     for (j in 0 until bonusesArray.length()) {
                         val bJson = bonusesArray.getJSONObject(j)
-                        bonuses.add(
-                            com.interim.hours.data.model.MissionBonus(
-                                missionId = mission.id,
-                                name = bJson.getString("name"),
-                                defaultAmount = bJson.getDouble("defaultAmount")
+                        val name = bJson.optString("name", "").trim()
+                        if (name.isNotEmpty()) {
+                            bonuses.add(
+                                com.interim.hours.data.model.MissionBonus(
+                                    missionId = mission.id,
+                                    name = name,
+                                    defaultAmount = bJson.optDouble("defaultAmount", 0.0).coerceIn(0.0, 1000.0)
+                                )
                             )
-                        )
+                        }
                     }
 
                     // Save the mission to database
@@ -391,15 +422,27 @@ class SettingsViewModel @Inject constructor(
                         ?: existingMissions.find { it.mission.syncId == missionSyncId }?.mission?.id
                         ?: continue // Skip if mission doesn't exist or couldn't be resolved
 
+                    val dateMillis = dJson.optLong("dateMillis", 0L)
+                    val startTimeMillis = dJson.optLong("startTimeMillis", 0L)
+                    val endTimeMillis = dJson.optLong("endTimeMillis", 0L)
+                    if (dateMillis <= 0L || startTimeMillis <= 0L || endTimeMillis <= 0L) {
+                        continue // Skip entry if dates are completely corrupted/empty
+                    }
+
+                    val durationDiff = endTimeMillis - startTimeMillis
+                    if (durationDiff <= 0L || durationDiff > 36 * 3600 * 1000L) {
+                        continue // Skip entry with corrupted timeframe (prevents ANR and infinite loops)
+                    }
+
                     val existing = existingWorkDaysMap[syncId]
 
                     val workDay = com.interim.hours.data.model.WorkDay(
                         id = existing?.workDay?.id ?: 0,
                         missionId = dbMissionId,
-                        dateMillis = dJson.getLong("dateMillis"),
-                        startTimeMillis = dJson.getLong("startTimeMillis"),
-                        endTimeMillis = dJson.getLong("endTimeMillis"),
-                        breakMinutes = dJson.getInt("breakMinutes"),
+                        dateMillis = dateMillis,
+                        startTimeMillis = startTimeMillis,
+                        endTimeMillis = endTimeMillis,
+                        breakMinutes = dJson.optInt("breakMinutes", 0).coerceIn(0, 1440),
                         comment = dJson.optString("comment", ""),
                         syncId = syncId
                     )
@@ -408,13 +451,16 @@ class SettingsViewModel @Inject constructor(
                     val bonuses = mutableListOf<com.interim.hours.data.model.WorkDayBonus>()
                     for (j in 0 until bonusesArray.length()) {
                         val bJson = bonusesArray.getJSONObject(j)
-                        bonuses.add(
-                            com.interim.hours.data.model.WorkDayBonus(
-                                workDayId = workDay.id,
-                                name = bJson.getString("name"),
-                                amount = bJson.getDouble("amount")
+                        val name = bJson.optString("name", "").trim()
+                        if (name.isNotEmpty()) {
+                            bonuses.add(
+                                com.interim.hours.data.model.WorkDayBonus(
+                                    workDayId = workDay.id,
+                                    name = name,
+                                    amount = bJson.optDouble("amount", 0.0).coerceIn(0.0, 1000.0)
+                                )
                             )
-                        )
+                        }
                     }
 
                     workDayRepository.saveWorkDay(workDay, bonuses)

@@ -16,6 +16,14 @@ import java.util.Calendar
 
 object PdfExporter {
 
+    private fun parseColorSafe(colorHex: String, defaultColor: Int = android.graphics.Color.BLACK): Int {
+        return try {
+            android.graphics.Color.parseColor(colorHex)
+        } catch (e: Exception) {
+            defaultColor
+        }
+    }
+
     fun generatePdfFile(
         context: Context,
         monthStr: String,
@@ -34,7 +42,7 @@ object PdfExporter {
         val paintTitle = Paint().apply {
             textSize = 18f
             isFakeBoldText = true
-            color = android.graphics.Color.parseColor(mission.colorHex)
+            color = parseColorSafe(mission.colorHex)
         }
         val paintSubtitle = Paint().apply {
             textSize = 12f
@@ -170,12 +178,12 @@ object PdfExporter {
 
         // Big Gross and Net boxes
         val paintBox = Paint().apply {
-            color = android.graphics.Color.parseColor(mission.colorHex)
+            color = parseColorSafe(mission.colorHex)
             style = Paint.Style.STROKE
             strokeWidth = 1.5f
         }
         val paintBoxFill = Paint().apply {
-            color = android.graphics.Color.parseColor(mission.colorHex)
+            color = parseColorSafe(mission.colorHex)
             alpha = 15
             style = Paint.Style.FILL
         }

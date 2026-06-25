@@ -16,6 +16,9 @@ object SalaryCalculator {
         nightEndHour: Int
     ): Double {
         if (startTimeMillis >= endTimeMillis) return 0.0
+        // Safeguard to prevent extremely large loops causing ANRs on corrupt data
+        if (endTimeMillis - startTimeMillis > 36 * 3600 * 1000L) return 0.0
+
         val calendar = Calendar.getInstance()
         var nightMinutes = 0
         var currentMillis = startTimeMillis

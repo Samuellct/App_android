@@ -3,6 +3,7 @@ package com.interim.hours.ui.dashboard
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -46,6 +47,7 @@ fun DashboardScreen(
 ) {
     val stats by viewModel.statsState.collectAsState()
     val activeMissions by viewModel.activeMissionsState.collectAsState()
+    val chartData by viewModel.chartDataState.collectAsState()
     var showLogDialog by remember { mutableStateOf(false) }
 
     Scaffold(
@@ -114,6 +116,13 @@ fun DashboardScreen(
             item {
                 MonthlyProgressCard(
                     stats = stats
+                )
+            }
+
+            // Trend chart card
+            item {
+                TrendChartCard(
+                    chartData = chartData
                 )
             }
 
@@ -435,6 +444,172 @@ fun RecentDayItem(
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
+            }
+        }
+    }
+}
+
+@Composable
+fun TrendChartCard(
+    chartData: List<MonthlyChartItem>,
+    modifier: Modifier = Modifier
+) {
+    var isHoursSelected by remember { mutableStateOf(true) }
+
+    Card(
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        modifier = modifier.fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp)
+        ) {
+            // Header: Title and Toggle
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Tendances",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold
+                )
+
+                Row(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
+                        .padding(2.dp),
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    val activeBgColor = MaterialTheme.colorScheme.primary
+                    val inactiveBgColor = Color.Transparent
+                    val activeTextColor = MaterialTheme.colorScheme.onPrimary
+                    val inactiveTextColor = MaterialTheme.colorScheme.onSurfaceVariant
+
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(if (isHoursSelected) activeBgColor else inactiveBgColor)
+                            .clickable { isHoursSelected = true }
+                            .padding(horizontal = 12.dp, vertical = 6.dp)
+                    ) {
+                        Text(
+                            text = "Heures",
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = if (isHoursSelected) activeTextColor else inactiveTextColor
+                        )
+                    }
+
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(if (!isHoursSelected) activeBgColor else inactiveBgColor)
+                            .clickable { isHoursSelected = false }
+                            .padding(horizontal = 12.dp, vertical = 6.dp)
+                    ) {
+                        Text(
+                            text = "Gains",
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = if (!isHoursSelected) activeTextColor else inactiveTextColor
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            if (chartData.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(150.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        text = "Aucune donnée disponible",
+                        color = MaterialTheme.colorScheme.outline,
+                        fontSize = 13.sp
+                    )
+                }
+            } else {
+                val maxValue = chartData.maxOfOrNull { if (isHoursSelected) it.hours else it.earnings } ?: 0.0
+                val maxVal = maxOf(maxValue, 1.0)
+                
+                val barColor = if (isHoursSelected) {
+                    MaterialTheme.colorScheme.primary
+                } else {
+                    SuccessGreen
+                }
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(180.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                    verticalAlignment = Alignment.Bottom
+                ) {
+                    chartData.forEach { item ->
+                        val value = if (isHoursSelected) item.hours else item.earnings
+                        val ratio = (value / maxVal).toFloat()
+                        
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = Modifier
+                                .weight(1f)
+                                .fillMaxHeight(),
+                            verticalArrangement = Arrangement.Bottom
+                        ) {
+                            // Value text
+                            Text(
+                                text = if (isHoursSelected) {
+                                    String.format(Locale.FRANCE, "%.1fh", value)
+                                } else {
+                                    String.format(Locale.FRANCE, "%.0f€", value)
+                                },
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            
+                            Spacer(modifier = Modifier.height(4.dp))
+                            
+                            // Bar container
+                            Box(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .width(24.dp)
+                                    .clip(RoundedCornerShape(topStart = 6.dp, topEnd = 6.dp))
+                                    .background(barColor.copy(alpha = 0.08f)),
+                                contentAlignment = Alignment.BottomCenter
+                            ) {
+                                if (ratio > 0f) {
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .fillMaxHeight(ratio)
+                                            .background(barColor)
+                                    )
+                                }
+                            }
+                            
+                            Spacer(modifier = Modifier.height(6.dp))
+                            
+                            // Month label
+                            Text(
+                                text = item.monthLabel,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.SemiBold,
+                                color = MaterialTheme.colorScheme.outline
+                            )
+                        }
+                    }
+                }
             }
         }
     }

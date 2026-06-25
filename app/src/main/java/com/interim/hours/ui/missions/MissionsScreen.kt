@@ -30,11 +30,40 @@ import com.interim.hours.data.model.Mission
 import com.interim.hours.data.model.MissionBonus
 import com.interim.hours.ui.theme.ErrorRed
 
-fun String.toColor(): Color {
-    return try {
+fun String.toColor(isDarkTheme: Boolean = false): Color {
+    val baseColor = try {
         Color(android.graphics.Color.parseColor(this))
     } catch (e: Exception) {
         Color.Gray
+    }
+    
+    val r = baseColor.red
+    val g = baseColor.green
+    val b = baseColor.blue
+    val luminance = 0.2126f * r + 0.7152f * g + 0.0722f * b
+
+    return if (isDarkTheme) {
+        if (luminance < 0.25f) {
+            Color(
+                red = (r * 0.5f) + 0.5f,
+                green = (g * 0.5f) + 0.5f,
+                blue = (b * 0.5f) + 0.5f,
+                alpha = baseColor.alpha
+            )
+        } else {
+            baseColor
+        }
+    } else {
+        if (luminance > 0.8f) {
+            Color(
+                red = r * 0.6f,
+                green = g * 0.6f,
+                blue = b * 0.6f,
+                alpha = baseColor.alpha
+            )
+        } else {
+            baseColor
+        }
     }
 }
 
@@ -723,7 +752,6 @@ fun MissionEditDialog(
                             }
                         }
                     }
-
                     item {
                         Spacer(modifier = Modifier.height(24.dp))
                         Button(
@@ -766,6 +794,10 @@ fun MissionEditDialog(
                         ) {
                             Text("Enregistrer la mission", fontWeight = FontWeight.Bold)
                         }
+                    }
+
+                    item {
+                        Spacer(modifier = Modifier.height(80.dp))
                     }
                 }
             }

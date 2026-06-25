@@ -171,17 +171,45 @@ fun HistoryScreen(
                 } else {
                     groupedWorkDays.forEach { (monthStr, daysList) ->
                         item {
+                            val totalHours = daysList.sumOf { item ->
+                                val day = item.workDay
+                                val duration = (day.endTimeMillis - day.startTimeMillis - day.breakMinutes * 60000.0) / 3600000.0
+                                if (duration > 0.0) duration else 0.0
+                            }
+                            val totalEarningsGross = daysList.sumOf { item ->
+                                com.interim.hours.utils.SalaryCalculator.calculateEarnings(item.workDay, item.mission, item.bonuses)
+                            }
+                            val daysGroupedByWeek = daysList.groupBy { item ->
+                                com.interim.hours.utils.SalaryCalculator.getYearAndWeek(item.workDay.dateMillis)
+                            }
+                            var totalOvertimePremium = 0.0
+                            daysGroupedByWeek.forEach { (_, weekDaysList) ->
+                                val premium = com.interim.hours.utils.SalaryCalculator.calculateWeeklyOvertimePremium(weekDaysList)
+                                if (premium > 0.0) {
+                                    totalOvertimePremium += premium
+                                }
+                            }
+                            val totalGross = totalEarningsGross + totalOvertimePremium
+                            val totalNet = totalGross * 0.77
+
                             Row(
                                 modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
-                                Text(
-                                    text = monthStr,
-                                    style = MaterialTheme.typography.titleMedium,
-                                    fontWeight = FontWeight.Bold,
-                                    color = MaterialTheme.colorScheme.primary
-                                )
+                                Column {
+                                    Text(
+                                        text = monthStr,
+                                        style = MaterialTheme.typography.titleMedium,
+                                        fontWeight = FontWeight.Bold,
+                                        color = MaterialTheme.colorScheme.primary
+                                    )
+                                    Text(
+                                        text = "${String.format(Locale.FRANCE, "%.1f", totalHours)} h · ~${String.format(Locale.FRANCE, "%.2f", totalNet)} € Net",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.outline
+                                    )
+                                }
                                 TextButton(
                                     onClick = {
                                         selectedMonthForPdf = monthStr

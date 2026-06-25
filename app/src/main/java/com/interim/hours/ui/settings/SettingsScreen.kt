@@ -234,6 +234,49 @@ fun SettingsScreen(
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text("Période du graphique de tendances", fontWeight = FontWeight.SemiBold)
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    var chartDurationExpanded by remember { mutableStateOf(false) }
+                    val currentChartDuration by viewModel.chartDurationMonths.collectAsState()
+                    val chartDurationLabels = mapOf(
+                        1 to "1 mois",
+                        3 to "3 mois",
+                        6 to "6 mois",
+                        12 to "12 mois"
+                    )
+
+                    ExposedDropdownMenuBox(
+                        expanded = chartDurationExpanded,
+                        onExpandedChange = { chartDurationExpanded = !chartDurationExpanded }
+                    ) {
+                        OutlinedTextField(
+                            value = chartDurationLabels[currentChartDuration] ?: "6 mois",
+                            onValueChange = {},
+                            readOnly = true,
+                            trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = chartDurationExpanded) },
+                            colors = ExposedDropdownMenuDefaults.outlinedTextFieldColors(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .menuAnchor()
+                        )
+                        ExposedDropdownMenu(
+                            expanded = chartDurationExpanded,
+                            onDismissRequest = { chartDurationExpanded = false }
+                        ) {
+                            listOf(1, 3, 6, 12).forEach { months ->
+                                DropdownMenuItem(
+                                    text = { Text(chartDurationLabels[months] ?: "$months mois") },
+                                    onClick = {
+                                        viewModel.setChartDurationMonths(months)
+                                        chartDurationExpanded = false
+                                    }
+                                )
+                            }
+                        }
+                    }
                 }
             }
 
