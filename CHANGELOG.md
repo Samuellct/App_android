@@ -1,4 +1,14 @@
 
+## [v2.2.0] - 2026-06-25
+## [2.2.0](https://github.com/Samuellct/App_android/compare/v2.1.1...v2.2.0) (2026-06-25)
+
+
+### Features
+
+* implement trend charts, automatic midnight shifts, monthly history summaries, and safety/security safeguards ([e599797](https://github.com/Samuellct/App_android/commit/e599797cc3d758559cca2f3c0d8d100307eb59f0))
+
+
+
 ## [v2.1.1] - 2026-06-17
 ### [2.1.1](https://github.com/Samuellct/App_android/compare/v2.1.0...v2.1.1) (2026-06-17)
 
