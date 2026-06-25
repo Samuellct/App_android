@@ -16,4 +16,5 @@
 /local.properties
 .DS_Store
 *.jks
+!work_log_keystore.jks
 *.keystore
