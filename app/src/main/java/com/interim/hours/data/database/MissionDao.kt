@@ -42,7 +42,7 @@ interface MissionDao {
     suspend fun deleteMissionBonusesByMissionId(missionId: Int)
 
     @Transaction
-    suspend fun saveMissionWithBonuses(mission: Mission, bonuses: List<MissionBonus>) {
+    suspend fun saveMissionWithBonuses(mission: Mission, bonuses: List<MissionBonus>): Int {
         val missionId = if (mission.id == 0) {
             insertMission(mission).toInt()
         } else {
@@ -53,5 +53,6 @@ interface MissionDao {
         bonuses.forEach { bonus ->
             insertMissionBonus(bonus.copy(missionId = missionId))
         }
+        return missionId
     }
 }

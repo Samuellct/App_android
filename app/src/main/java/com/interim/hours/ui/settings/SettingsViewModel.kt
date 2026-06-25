@@ -5,10 +5,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.room.withTransaction
 import androidx.work.*
 import com.interim.hours.data.repository.MissionRepository
 import com.interim.hours.data.repository.WorkDayRepository
-import com.interim.hours.worker.ReminderWorker
+import com.interim.hours.worker.ReminderScheduler
 import com.interim.hours.ui.theme.ThemeMode
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -25,7 +26,8 @@ import javax.inject.Inject
 class SettingsViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val workDayRepository: WorkDayRepository,
-    private val missionRepository: MissionRepository
+    private val missionRepository: MissionRepository,
+    private val appDatabase: com.interim.hours.data.database.AppDatabase
 ) : ViewModel() {
 
     private val sharedPrefs = context.getSharedPreferences("settings_prefs", Context.MODE_PRIVATE)
@@ -159,43 +161,11 @@ class SettingsViewModel @Inject constructor(
     }
 
     private fun scheduleReminder(hour: Int, minute: Int) {
-        val workManager = WorkManager.getInstance(context)
-
-        // Calculate initial delay
-        val currentDate = Calendar.getInstance()
-        val dueDate = Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, hour)
-            set(Calendar.MINUTE, minute)
-            set(Calendar.SECOND, 0)
-            set(Calendar.MILLISECOND, 0)
-        }
-
-        if (dueDate.before(currentDate)) {
-            dueDate.add(Calendar.HOUR_OF_DAY, 24)
-        }
-
-        val initialDelay = dueDate.timeInMillis - currentDate.timeInMillis
-
-        // Build periodic request
-        val reminderRequest = PeriodicWorkRequestBuilder<ReminderWorker>(24, TimeUnit.HOURS)
-            .setInitialDelay(initialDelay, TimeUnit.MILLISECONDS)
-            .setConstraints(
-                Constraints.Builder()
-                    .setRequiresBatteryNotLow(false)
-                    .build()
-            )
-            .build()
-
-        workManager.enqueueUniquePeriodicWork(
-            "DailyReminderWork",
-            ExistingPeriodicWorkPolicy.UPDATE, // updates schedule with new time
-            reminderRequest
-        )
+        ReminderScheduler.scheduleReminder(context, hour, minute)
     }
 
     private fun cancelReminder() {
-        val workManager = WorkManager.getInstance(context)
-        workManager.cancelUniqueWork("DailyReminderWork")
+        ReminderScheduler.cancelReminder(context)
     }
 
     fun exportToCSV(onShareIntentReady: (Intent) -> Unit) {
@@ -338,134 +308,134 @@ class SettingsViewModel @Inject constructor(
                 // Keep track of syncId to new generated mission ID mapping
                 val missionSyncIdToIdMap = mutableMapOf<String, Int>()
 
-                // First, read all existing missions to avoid inserting duplicates if they already exist
-                val existingMissions = missionRepository.getMissionsWithBonusesFlow().first()
-                val existingMissionsMap = existingMissions.associateBy { it.mission.syncId }
-
                 // Regular expression to check hex color validity
                 val colorHexPattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$".toRegex()
 
-                // Insert/Update missions
-                for (i in 0 until missionsArray.length()) {
-                    val mJson = missionsArray.getJSONObject(i)
-                    
-                    val company = mJson.optString("company", "").trim()
-                    val agency = mJson.optString("agency", "").trim()
-                    if (company.isEmpty() || agency.isEmpty()) {
-                        continue // Skip invalid missions missing main text details
-                    }
+                // Perform all database operations inside a single atomic transaction
+                appDatabase.withTransaction {
+                    // First, read all existing missions to avoid inserting duplicates if they already exist
+                    val existingMissions = appDatabase.missionDao().getMissionsWithBonusesFlow().first()
+                    val existingMissionsMap = existingMissions.associateBy { it.mission.syncId }
 
-                    val syncId = mJson.optString("syncId", java.util.UUID.randomUUID().toString())
-                    val existing = existingMissionsMap[syncId]
-                    
-                    val colorHex = mJson.optString("colorHex", "#6366F1")
-                    val cleanColorHex = if (colorHexPattern.matches(colorHex)) colorHex else "#6366F1"
-
-                    val mission = com.interim.hours.data.model.Mission(
-                        id = existing?.mission?.id ?: 0,
-                        syncId = syncId,
-                        company = company,
-                        agency = agency,
-                        hourlyRate = mJson.optDouble("hourlyRate", 12.31).coerceIn(0.0, 500.0),
-                        siteAddress = mJson.optString("siteAddress", ""),
-                        colorHex = cleanColorHex,
-                        isActive = mJson.optBoolean("isActive", true),
-                        nightStartHour = mJson.optInt("nightStartHour", 21).coerceIn(0, 23),
-                        nightEndHour = mJson.optInt("nightEndHour", 6).coerceIn(0, 23),
-                        nightRatePercentage = mJson.optDouble("nightRatePercentage", 0.0).coerceIn(0.0, 200.0),
-                        hasIfmIccp = mJson.optBoolean("hasIfmIccp", true),
-                        hasWeeklyOvertime = mJson.optBoolean("hasWeeklyOvertime", true),
-                        weeklyOvertimeThreshold = mJson.optDouble("weeklyOvertimeThreshold", 35.0).coerceIn(10.0, 100.0),
-                        overtimeRate1Percentage = mJson.optDouble("overtimeRate1Percentage", 25.0).coerceIn(0.0, 200.0),
-                        overtimeRate2Percentage = mJson.optDouble("overtimeRate2Percentage", 50.0).coerceIn(0.0, 200.0)
-                    )
-
-                    val bonusesArray = mJson.optJSONArray("bonuses") ?: org.json.JSONArray()
-                    val bonuses = mutableListOf<com.interim.hours.data.model.MissionBonus>()
-                    for (j in 0 until bonusesArray.length()) {
-                        val bJson = bonusesArray.getJSONObject(j)
-                        val name = bJson.optString("name", "").trim()
-                        if (name.isNotEmpty()) {
-                            bonuses.add(
-                                com.interim.hours.data.model.MissionBonus(
-                                    missionId = mission.id,
-                                    name = name,
-                                    defaultAmount = bJson.optDouble("defaultAmount", 0.0).coerceIn(0.0, 1000.0)
-                                )
-                            )
+                    // Insert/Update missions
+                    for (i in 0 until missionsArray.length()) {
+                        val mJson = missionsArray.getJSONObject(i)
+                        
+                        val company = mJson.optString("company", "").trim()
+                        val agency = mJson.optString("agency", "").trim()
+                        if (company.isEmpty() || agency.isEmpty()) {
+                            continue // Skip invalid missions missing main text details
                         }
+
+                        val syncId = mJson.optString("syncId", java.util.UUID.randomUUID().toString())
+                        val existing = existingMissionsMap[syncId]
+                        
+                        val colorHex = mJson.optString("colorHex", "#6366F1")
+                        val cleanColorHex = if (colorHexPattern.matches(colorHex)) colorHex else "#6366F1"
+
+                        val mission = com.interim.hours.data.model.Mission(
+                            id = existing?.mission?.id ?: 0,
+                            syncId = syncId,
+                            company = company,
+                            agency = agency,
+                            hourlyRate = mJson.optDouble("hourlyRate", 12.31).coerceIn(0.0, 500.0),
+                            siteAddress = mJson.optString("siteAddress", ""),
+                            colorHex = cleanColorHex,
+                            isActive = mJson.optBoolean("isActive", true),
+                            nightStartHour = mJson.optInt("nightStartHour", 21).coerceIn(0, 23),
+                            nightEndHour = mJson.optInt("nightEndHour", 6).coerceIn(0, 23),
+                            nightRatePercentage = mJson.optDouble("nightRatePercentage", 0.0).coerceIn(0.0, 200.0),
+                            hasIfmIccp = mJson.optBoolean("hasIfmIccp", true),
+                            hasWeeklyOvertime = mJson.optBoolean("hasWeeklyOvertime", true),
+                            weeklyOvertimeThreshold = mJson.optDouble("weeklyOvertimeThreshold", 35.0).coerceIn(10.0, 100.0),
+                            overtimeRate1Percentage = mJson.optDouble("overtimeRate1Percentage", 25.0).coerceIn(0.0, 200.0),
+                            overtimeRate2Percentage = mJson.optDouble("overtimeRate2Percentage", 50.0).coerceIn(0.0, 200.0)
+                        )
+
+                        val bonusesArray = mJson.optJSONArray("bonuses") ?: org.json.JSONArray()
+                        val bonuses = mutableListOf<com.interim.hours.data.model.MissionBonus>()
+                        for (j in 0 until bonusesArray.length()) {
+                            val bJson = bonusesArray.getJSONObject(j)
+                            val name = bJson.optString("name", "").trim()
+                            if (name.isNotEmpty()) {
+                                bonuses.add(
+                                    com.interim.hours.data.model.MissionBonus(
+                                        missionId = mission.id,
+                                        name = name,
+                                        defaultAmount = bJson.optDouble("defaultAmount", 0.0).coerceIn(0.0, 1000.0)
+                                    )
+                                )
+                            }
+                        }
+
+                        // Save the mission to database and retrieve the generated/updated ID directly
+                        val dbId = appDatabase.missionDao().saveMissionWithBonuses(mission, bonuses)
+                        missionSyncIdToIdMap[syncId] = dbId
+                        importedMissions++
                     }
 
-                    // Save the mission to database
-                    missionRepository.saveMission(mission, bonuses)
-                    
-                    // We need the database ID. Let's find it.
-                    val updatedMissions = missionRepository.getMissionsFlow().first()
-                    val savedMission = updatedMissions.find { it.syncId == syncId }
-                    if (savedMission != null) {
-                        missionSyncIdToIdMap[syncId] = savedMission.id
+                    // Read existing work days to update/prevent duplicates
+                    val existingWorkDays = appDatabase.workDayDao().getWorkDaysWithDetails()
+                    val existingWorkDaysMap = existingWorkDays.associateBy { it.workDay.syncId }
+
+                    // Insert/Update workdays
+                    for (i in 0 until workDaysArray.length()) {
+                        val dJson = workDaysArray.getJSONObject(i)
+                        val syncId = dJson.optString("syncId", java.util.UUID.randomUUID().toString())
+                        val missionSyncId = dJson.getString("missionSyncId")
+                        
+                        val dbMissionId = missionSyncIdToIdMap[missionSyncId]
+                            ?: existingMissions.find { it.mission.syncId == missionSyncId }?.mission?.id
+                            ?: continue // Skip if mission doesn't exist or couldn't be resolved
+
+                        val dateMillis = dJson.optLong("dateMillis", 0L)
+                        val startTimeMillis = dJson.optLong("startTimeMillis", 0L)
+                        val endTimeMillis = dJson.optLong("endTimeMillis", 0L)
+                        if (dateMillis <= 0L || startTimeMillis <= 0L || endTimeMillis <= 0L) {
+                            continue // Skip entry if dates are completely corrupted/empty
+                        }
+
+                        val durationDiff = endTimeMillis - startTimeMillis
+                        if (durationDiff <= 0L || durationDiff > 36 * 3600 * 1000L) {
+                            continue // Skip entry with corrupted timeframe (prevents ANR and infinite loops)
+                        }
+
+                        val existing = existingWorkDaysMap[syncId]
+
+                        val workDay = com.interim.hours.data.model.WorkDay(
+                            id = existing?.workDay?.id ?: 0,
+                            missionId = dbMissionId,
+                            dateMillis = dateMillis,
+                            startTimeMillis = startTimeMillis,
+                            endTimeMillis = endTimeMillis,
+                            breakMinutes = dJson.optInt("breakMinutes", 0).coerceIn(0, 1440),
+                            comment = dJson.optString("comment", ""),
+                            syncId = syncId
+                        )
+
+                        val bonusesArray = dJson.optJSONArray("bonuses") ?: org.json.JSONArray()
+                        val bonuses = mutableListOf<com.interim.hours.data.model.WorkDayBonus>()
+                        for (j in 0 until bonusesArray.length()) {
+                            val bJson = bonusesArray.getJSONObject(j)
+                            val name = bJson.optString("name", "").trim()
+                            if (name.isNotEmpty()) {
+                                bonuses.add(
+                                    com.interim.hours.data.model.WorkDayBonus(
+                                        workDayId = workDay.id,
+                                        name = name,
+                                        amount = bJson.optDouble("amount", 0.0).coerceIn(0.0, 1000.0)
+                                    )
+                                )
+                            }
+                        }
+
+                        appDatabase.workDayDao().saveWorkDayWithBonuses(workDay, bonuses)
+                        importedWorkDays++
                     }
-                    importedMissions++
                 }
 
-                // Read existing work days to update/prevent duplicates
-                val existingWorkDays = workDayRepository.getWorkDaysWithDetailsFlow().first()
-                val existingWorkDaysMap = existingWorkDays.associateBy { it.workDay.syncId }
-
-                // Insert/Update workdays
-                for (i in 0 until workDaysArray.length()) {
-                    val dJson = workDaysArray.getJSONObject(i)
-                    val syncId = dJson.optString("syncId", java.util.UUID.randomUUID().toString())
-                    val missionSyncId = dJson.getString("missionSyncId")
-                    
-                    val dbMissionId = missionSyncIdToIdMap[missionSyncId]
-                        ?: existingMissions.find { it.mission.syncId == missionSyncId }?.mission?.id
-                        ?: continue // Skip if mission doesn't exist or couldn't be resolved
-
-                    val dateMillis = dJson.optLong("dateMillis", 0L)
-                    val startTimeMillis = dJson.optLong("startTimeMillis", 0L)
-                    val endTimeMillis = dJson.optLong("endTimeMillis", 0L)
-                    if (dateMillis <= 0L || startTimeMillis <= 0L || endTimeMillis <= 0L) {
-                        continue // Skip entry if dates are completely corrupted/empty
-                    }
-
-                    val durationDiff = endTimeMillis - startTimeMillis
-                    if (durationDiff <= 0L || durationDiff > 36 * 3600 * 1000L) {
-                        continue // Skip entry with corrupted timeframe (prevents ANR and infinite loops)
-                    }
-
-                    val existing = existingWorkDaysMap[syncId]
-
-                    val workDay = com.interim.hours.data.model.WorkDay(
-                        id = existing?.workDay?.id ?: 0,
-                        missionId = dbMissionId,
-                        dateMillis = dateMillis,
-                        startTimeMillis = startTimeMillis,
-                        endTimeMillis = endTimeMillis,
-                        breakMinutes = dJson.optInt("breakMinutes", 0).coerceIn(0, 1440),
-                        comment = dJson.optString("comment", ""),
-                        syncId = syncId
-                    )
-
-                    val bonusesArray = dJson.optJSONArray("bonuses") ?: org.json.JSONArray()
-                    val bonuses = mutableListOf<com.interim.hours.data.model.WorkDayBonus>()
-                    for (j in 0 until bonusesArray.length()) {
-                        val bJson = bonusesArray.getJSONObject(j)
-                        val name = bJson.optString("name", "").trim()
-                        if (name.isNotEmpty()) {
-                            bonuses.add(
-                                com.interim.hours.data.model.WorkDayBonus(
-                                    workDayId = workDay.id,
-                                    name = name,
-                                    amount = bJson.optDouble("amount", 0.0).coerceIn(0.0, 1000.0)
-                                )
-                            )
-                        }
-                    }
-
-                    workDayRepository.saveWorkDay(workDay, bonuses)
-                    importedWorkDays++
-                }
+                // Update Widget only once after all imports are safely committed
+                com.interim.hours.widget.WidgetUpdater.triggerUpdate(context)
 
                 onComplete(true, "Importation réussie : $importedMissions missions et $importedWorkDays journées importées.")
             } catch (e: Exception) {

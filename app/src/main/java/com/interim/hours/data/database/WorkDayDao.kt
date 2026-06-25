@@ -47,7 +47,7 @@ interface WorkDayDao {
     suspend fun deleteWorkDayBonusesByWorkDayId(workDayId: Int)
 
     @Transaction
-    suspend fun saveWorkDayWithBonuses(workDay: WorkDay, bonuses: List<WorkDayBonus>) {
+    suspend fun saveWorkDayWithBonuses(workDay: WorkDay, bonuses: List<WorkDayBonus>): Int {
         val workDayId = if (workDay.id == 0) {
             insertWorkDay(workDay).toInt()
         } else {
@@ -58,5 +58,6 @@ interface WorkDayDao {
         bonuses.forEach { bonus ->
             insertWorkDayBonus(bonus.copy(workDayId = workDayId))
         }
+        return workDayId
     }
 }

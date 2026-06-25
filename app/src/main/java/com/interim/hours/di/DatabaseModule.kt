@@ -35,7 +35,6 @@ object DatabaseModule {
             AppDatabase::class.java,
             "interim_hours_db"
         ).addMigrations(MIGRATION_1_2)
-            .fallbackToDestructiveMigration() // Simple for development, can add migrations later
             .enableMultiInstanceInvalidation()
             .build()
     }

@@ -63,6 +63,10 @@ class CalendarViewModel @Inject constructor(
         selectedMonthState.value = prev
     }
 
+    fun resetToCurrentMonth() {
+        selectedMonthState.value = Calendar.getInstance()
+    }
+
     fun saveWorkDay(workDay: WorkDay, bonuses: List<WorkDayBonus>) {
         viewModelScope.launch {
             workDayRepository.saveWorkDay(workDay, bonuses)
