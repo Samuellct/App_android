@@ -1,4 +1,14 @@
 
+## [v2.2.1] - 2026-06-25
+### [2.2.1](https://github.com/Samuellct/App_android/compare/v2.2.0...v2.2.1) (2026-06-25)
+
+
+### Bug Fixes
+
+* force-track keystore to prevent signature mismatch and hide bottom navigation bar on settings screen ([7fcf6aa](https://github.com/Samuellct/App_android/commit/7fcf6aa7bc0dba672c2663eeafe43150ef8a3505))
+
+
+
 ## [v2.2.0] - 2026-06-25
 ## [2.2.0](https://github.com/Samuellct/App_android/compare/v2.1.1...v2.2.0) (2026-06-25)
 
