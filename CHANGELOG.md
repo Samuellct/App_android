@@ -1,4 +1,14 @@
 
+## [v2.3.0] - 2026-06-25
+## [2.3.0](https://github.com/Samuellct/App_android/compare/v2.2.2...v2.3.0) (2026-06-25)
+
+
+### Features
+
+* **stabilité:** correction imports atomiques, pagination pdf, bouton aujourd'hui, alarmmanager et test de migration ([8eb32d6](https://github.com/Samuellct/App_android/commit/8eb32d6355d4f2de907cbc8b2168acb2b4fdc0b9))
+
+
+
 ## [v2.2.2] - 2026-06-25
 ### [2.2.2](https://github.com/Samuellct/App_android/compare/v2.2.1...v2.2.2) (2026-06-25)
 
