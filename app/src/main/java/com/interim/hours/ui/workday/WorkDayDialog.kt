@@ -66,7 +66,7 @@ fun WorkDayDialog(
         }
     }
 
-    var dateMillis by remember {
+    var dateMillis by remember(existingWorkDayWithDetails, initialDateMillis, initialStartTimeMillis) {
         mutableStateOf(
             existingWorkDayWithDetails?.workDay?.dateMillis
                 ?: initialDateMillis
@@ -75,7 +75,7 @@ fun WorkDayDialog(
         )
     }
 
-    val startCalendar = remember {
+    val startCalendar = remember(existingWorkDayWithDetails, initialStartTimeMillis) {
         Calendar.getInstance().apply {
             existingWorkDayWithDetails?.let {
                 timeInMillis = it.workDay.startTimeMillis
@@ -87,7 +87,7 @@ fun WorkDayDialog(
             }
         }
     }
-    var startTimeMillis by remember {
+    var startTimeMillis by remember(existingWorkDayWithDetails, initialStartTimeMillis) {
         mutableStateOf(
             existingWorkDayWithDetails?.workDay?.startTimeMillis
                 ?: initialStartTimeMillis
@@ -95,7 +95,7 @@ fun WorkDayDialog(
         )
     }
 
-    val endCalendar = remember {
+    val endCalendar = remember(existingWorkDayWithDetails, initialEndTimeMillis) {
         Calendar.getInstance().apply {
             existingWorkDayWithDetails?.let {
                 timeInMillis = it.workDay.endTimeMillis
@@ -107,7 +107,7 @@ fun WorkDayDialog(
             }
         }
     }
-    var endTimeMillis by remember {
+    var endTimeMillis by remember(existingWorkDayWithDetails, initialEndTimeMillis) {
         mutableStateOf(
             existingWorkDayWithDetails?.workDay?.endTimeMillis
                 ?: initialEndTimeMillis
@@ -115,7 +115,7 @@ fun WorkDayDialog(
         )
     }
 
-    var breakMinutes by remember {
+    var breakMinutes by remember(existingWorkDayWithDetails, initialBreakMinutes) {
         mutableStateOf(
             existingWorkDayWithDetails?.workDay?.breakMinutes
                 ?: initialBreakMinutes
