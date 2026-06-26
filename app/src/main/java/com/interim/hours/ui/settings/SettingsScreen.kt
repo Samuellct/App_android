@@ -50,6 +50,7 @@ fun SettingsScreen(
     val notificationsEnabled by viewModel.notificationsEnabled.collectAsState()
     val notificationHour by viewModel.notificationHour.collectAsState()
     val notificationMinute by viewModel.notificationMinute.collectAsState()
+    val googleBackupEnabled by viewModel.googleBackupEnabled.collectAsState()
 
     val timeFormatter = remember { DecimalFormat("00") }
 
@@ -355,6 +356,54 @@ fun SettingsScreen(
                                 imeAction = ImeAction.Done
                             ),
                             modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+                }
+            }
+
+            // Google Cloud Backup Card
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Save,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                        Text(
+                            text = "Sauvegarde Cloud Google",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text("Sauvegarder sur Google Drive", fontWeight = FontWeight.SemiBold)
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "Sauvegarder automatiquement votre base de données et réglages sur votre compte Google Drive (chiffré par Google).",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(16.dp))
+                        Switch(
+                            checked = googleBackupEnabled,
+                            onCheckedChange = { viewModel.setGoogleBackupEnabled(it) }
                         )
                     }
                 }

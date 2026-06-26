@@ -62,6 +62,9 @@ class SettingsViewModel @Inject constructor(
             "chart_duration_months" -> {
                 _chartDurationMonths.value = prefs.getInt("chart_duration_months", 6)
             }
+            "google_backup_enabled" -> {
+                _googleBackupEnabled.value = prefs.getBoolean("google_backup_enabled", true)
+            }
         }
     }
 
@@ -113,6 +116,14 @@ class SettingsViewModel @Inject constructor(
     fun setOnboardingCompleted(completed: Boolean) {
         sharedPrefs.edit().putBoolean("has_completed_onboarding", completed).apply()
         _hasCompletedOnboarding.value = completed
+    }
+
+    private val _googleBackupEnabled = MutableStateFlow(sharedPrefs.getBoolean("google_backup_enabled", true))
+    val googleBackupEnabled: StateFlow<Boolean> = _googleBackupEnabled
+
+    fun setGoogleBackupEnabled(enabled: Boolean) {
+        sharedPrefs.edit().putBoolean("google_backup_enabled", enabled).apply()
+        _googleBackupEnabled.value = enabled
     }
 
     private val _notificationsEnabled = MutableStateFlow(sharedPrefs.getBoolean("notifications_enabled", true))
