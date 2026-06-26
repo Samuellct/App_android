@@ -1,4 +1,14 @@
 
+## [v2.4.2] - 2026-06-26
+### [2.4.2](https://github.com/Samuellct/App_android/compare/v2.4.1...v2.4.2) (2026-06-26)
+
+
+### Bug Fixes
+
+* **backup:** activer fullBackupOnly=true dans le manifeste pour forcer la sauvegarde automatique des fichiers ([c5a383b](https://github.com/Samuellct/App_android/commit/c5a383bc6c011f1f9a68c1f87058e96a105da2ad))
+
+
+
 ## [v2.4.1] - 2026-06-26
 ### [2.4.1](https://github.com/Samuellct/App_android/compare/v2.4.0...v2.4.1) (2026-06-26)
 
