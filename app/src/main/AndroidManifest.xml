@@ -10,6 +10,7 @@
         android:name=".InterimApplication"
         android:allowBackup="true"
         android:backupAgent=".data.backup.AppBackupAgent"
+        android:fullBackupOnly="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@android:drawable/sym_def_app_icon"
