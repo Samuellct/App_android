@@ -1,4 +1,14 @@
 
+## [v2.5.1] - 2026-06-26
+### [2.5.1](https://github.com/Samuellct/App_android/compare/v2.5.0...v2.5.1) (2026-06-26)
+
+
+### Bug Fixes
+
+* **widget:** resolve AlarmManager SecurityExceptions and update delay on end shift ([7bb8185](https://github.com/Samuellct/App_android/commit/7bb81853de7639ab309a49116205fb745d967cc4))
+
+
+
 ## [v2.5.0] - 2026-06-26
 ## [2.5.0](https://github.com/Samuellct/App_android/compare/v2.4.2...v2.5.0) (2026-06-26)
 
