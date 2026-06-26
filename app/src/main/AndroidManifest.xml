@@ -88,6 +88,18 @@
                 <action android:name="com.interim.hours.ACTION_SHOW_REMINDER" />
             </intent-filter>
         </receiver>
+
+        <!-- Pointing reminder receiver -->
+        <receiver
+            android:name=".worker.PointingReminderReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.interim.hours.ACTION_SHIFT_REMINDER" />
+                <action android:name="com.interim.hours.ACTION_BREAK_REMINDER" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

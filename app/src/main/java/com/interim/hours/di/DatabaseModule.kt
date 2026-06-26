@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.interim.hours.data.database.AppDatabase
 import com.interim.hours.data.database.MissionDao
 import com.interim.hours.data.database.WorkDayDao
+import com.interim.hours.data.pointing.PointingManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -47,5 +48,11 @@ object DatabaseModule {
     @Provides
     fun provideWorkDayDao(database: AppDatabase): WorkDayDao {
         return database.workDayDao()
+    }
+
+    @Provides
+    @Singleton
+    fun providePointingManager(@ApplicationContext context: Context): PointingManager {
+        return PointingManager.getInstance(context)
     }
 }

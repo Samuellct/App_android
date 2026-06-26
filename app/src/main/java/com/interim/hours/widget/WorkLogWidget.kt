@@ -21,6 +21,11 @@ import androidx.glance.action.actionStartActivity
 import androidx.glance.action.clickable
 import com.interim.hours.ui.MainActivity
 import com.interim.hours.data.database.WorkDayDao
+import com.interim.hours.data.pointing.PointingManager
+import com.interim.hours.data.pointing.PointingState
+import androidx.glance.Button
+import androidx.glance.action.actionParametersOf
+import androidx.glance.appwidget.action.actionRunCallback
 import com.interim.hours.utils.SalaryCalculator
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -84,11 +89,14 @@ class WorkLogWidget : GlanceAppWidget() {
         }
 
         val netEarnings = monthlyEarnings * 0.77
+        val pointingManager = PointingManager.getInstance(appContext)
+        val pointingState = pointingManager.getPointingState()
 
         provideContent {
             GlanceWidgetContent(
                 monthlyHours = monthlyHours,
-                netEarnings = netEarnings
+                netEarnings = netEarnings,
+                pointingState = pointingState
             )
         }
     }
@@ -97,7 +105,8 @@ class WorkLogWidget : GlanceAppWidget() {
 @Composable
 fun GlanceWidgetContent(
     monthlyHours: Double,
-    netEarnings: Double
+    netEarnings: Double,
+    pointingState: PointingState
 ) {
     val backgroundColor = GlanceTheme.colors.widgetBackground
     
@@ -161,22 +170,26 @@ fun GlanceWidgetContent(
             .clickable(actionStartActivity<MainActivity>()),
         horizontalAlignment = Alignment.Horizontal.CenterHorizontally
     ) {
-        // Top section
-        Text(
-            text = "Work Log",
-            style = TextStyle(
-                color = titleColor,
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp // Increased for accessibility
+        // Top section grouped in a Column to limit direct children count
+        Column(
+            horizontalAlignment = Alignment.Horizontal.CenterHorizontally
+        ) {
+            Text(
+                text = "Work Log",
+                style = TextStyle(
+                    color = titleColor,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp
+                )
             )
-        )
-        
-        Spacer(modifier = GlanceModifier.height(6.dp))
-        
-        Text(
-            text = statsTitle,
-            style = labelStyle
-        )
+            
+            Spacer(modifier = GlanceModifier.height(6.dp))
+            
+            Text(
+                text = statsTitle,
+                style = labelStyle
+            )
+        }
 
         // Center values between top title and bottom spacing
         Spacer(modifier = GlanceModifier.defaultWeight())
@@ -225,5 +238,50 @@ fun GlanceWidgetContent(
         }
 
         Spacer(modifier = GlanceModifier.defaultWeight())
+
+        Spacer(modifier = GlanceModifier.height(6.dp))
+
+        when (pointingState) {
+            PointingState.IDLE -> {
+                Button(
+                    text = "Pointer",
+                    onClick = actionRunCallback<PointingActionCallback>(
+                        actionParametersOf(PointingActionCallback.KEY_ACTION to "start_shift")
+                    ),
+                    modifier = GlanceModifier.fillMaxWidth().height(36.dp)
+                )
+            }
+            PointingState.WORKING -> {
+                Row(
+                    modifier = GlanceModifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.Horizontal.CenterHorizontally
+                ) {
+                    Button(
+                        text = "Pause",
+                        onClick = actionRunCallback<PointingActionCallback>(
+                            actionParametersOf(PointingActionCallback.KEY_ACTION to "start_break")
+                        ),
+                        modifier = GlanceModifier.defaultWeight().height(36.dp)
+                    )
+                    Spacer(modifier = GlanceModifier.width(6.dp))
+                    Button(
+                        text = "Fin",
+                        onClick = actionRunCallback<PointingActionCallback>(
+                            actionParametersOf(PointingActionCallback.KEY_ACTION to "end_shift")
+                        ),
+                        modifier = GlanceModifier.defaultWeight().height(36.dp)
+                    )
+                }
+            }
+            PointingState.ON_BREAK -> {
+                Button(
+                    text = "Fin Pause",
+                    onClick = actionRunCallback<PointingActionCallback>(
+                        actionParametersOf(PointingActionCallback.KEY_ACTION to "end_break")
+                    ),
+                    modifier = GlanceModifier.fillMaxWidth().height(36.dp)
+                )
+            }
+        }
     }
 }

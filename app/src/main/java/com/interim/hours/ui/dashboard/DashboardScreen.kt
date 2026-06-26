@@ -35,6 +35,7 @@ import com.interim.hours.ui.theme.GradientPurpleIndigo
 import com.interim.hours.ui.theme.SuccessGreen
 import com.interim.hours.ui.theme.GradientTealGreen
 import com.interim.hours.ui.workday.WorkDayDialog
+import com.interim.hours.data.pointing.PointingManager
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -49,6 +50,14 @@ fun DashboardScreen(
     val activeMissions by viewModel.activeMissionsState.collectAsState()
     val chartData by viewModel.chartDataState.collectAsState()
     var showLogDialog by remember { mutableStateOf(false) }
+
+    val prefillData by PointingManager.prefillState.collectAsState()
+
+    LaunchedEffect(prefillData) {
+        if (prefillData != null) {
+            showLogDialog = true
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -210,11 +219,18 @@ fun DashboardScreen(
     if (showLogDialog) {
         WorkDayDialog(
             missions = activeMissions,
-            onDismiss = { showLogDialog = false },
+            onDismiss = {
+                showLogDialog = false
+                PointingManager.setPrefillData(null)
+            },
             onSave = { workDay, bonuses ->
                 viewModel.saveWorkDay(workDay, bonuses)
                 showLogDialog = false
-            }
+                PointingManager.setPrefillData(null)
+            },
+            initialStartTimeMillis = prefillData?.startTimeMillis,
+            initialEndTimeMillis = prefillData?.endTimeMillis,
+            initialBreakMinutes = prefillData?.breakMinutes
         )
     }
 }

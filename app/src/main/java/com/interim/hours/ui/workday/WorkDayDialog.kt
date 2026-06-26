@@ -39,7 +39,10 @@ fun WorkDayDialog(
     onDismiss: () -> Unit,
     onSave: (WorkDay, List<WorkDayBonus>) -> Unit,
     existingWorkDayWithDetails: WorkDayWithDetails? = null,
-    initialDateMillis: Long? = null
+    initialDateMillis: Long? = null,
+    initialStartTimeMillis: Long? = null,
+    initialEndTimeMillis: Long? = null,
+    initialBreakMinutes: Int? = null
 ) {
     val context = LocalContext.current
     val haptic = androidx.compose.ui.platform.LocalHapticFeedback.current
@@ -47,7 +50,7 @@ fun WorkDayDialog(
     val timeFormatter = remember { SimpleDateFormat("HH:mm", Locale.FRANCE) }
 
     // Init state
-    var selectedMissionWithBonuses by remember {
+    var selectedMissionWithBonuses by remember(missions, existingWorkDayWithDetails) {
         mutableStateOf(
             existingWorkDayWithDetails?.let { day ->
                 missions.find { it.mission.id == day.workDay.missionId }
@@ -63,33 +66,62 @@ fun WorkDayDialog(
         }
     }
 
-    var dateMillis by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.dateMillis ?: initialDateMillis ?: calendar.timeInMillis) }
+    var dateMillis by remember {
+        mutableStateOf(
+            existingWorkDayWithDetails?.workDay?.dateMillis
+                ?: initialDateMillis
+                ?: initialStartTimeMillis
+                ?: calendar.timeInMillis
+        )
+    }
 
     val startCalendar = remember {
         Calendar.getInstance().apply {
             existingWorkDayWithDetails?.let {
                 timeInMillis = it.workDay.startTimeMillis
+            } ?: initialStartTimeMillis?.let {
+                timeInMillis = it
             } ?: run {
                 set(Calendar.HOUR_OF_DAY, 8)
                 set(Calendar.MINUTE, 0)
             }
         }
     }
-    var startTimeMillis by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.startTimeMillis ?: startCalendar.timeInMillis) }
+    var startTimeMillis by remember {
+        mutableStateOf(
+            existingWorkDayWithDetails?.workDay?.startTimeMillis
+                ?: initialStartTimeMillis
+                ?: startCalendar.timeInMillis
+        )
+    }
 
     val endCalendar = remember {
         Calendar.getInstance().apply {
             existingWorkDayWithDetails?.let {
                 timeInMillis = it.workDay.endTimeMillis
+            } ?: initialEndTimeMillis?.let {
+                timeInMillis = it
             } ?: run {
                 set(Calendar.HOUR_OF_DAY, 17)
                 set(Calendar.MINUTE, 0)
             }
         }
     }
-    var endTimeMillis by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.endTimeMillis ?: endCalendar.timeInMillis) }
+    var endTimeMillis by remember {
+        mutableStateOf(
+            existingWorkDayWithDetails?.workDay?.endTimeMillis
+                ?: initialEndTimeMillis
+                ?: endCalendar.timeInMillis
+        )
+    }
 
-    var breakMinutes by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.breakMinutes ?: 60) }
+    var breakMinutes by remember {
+        mutableStateOf(
+            existingWorkDayWithDetails?.workDay?.breakMinutes
+                ?: initialBreakMinutes
+                ?: 60
+        )
+    }
     var showCustomBreakDialog by remember { mutableStateOf(false) }
     var comment by remember { mutableStateOf(existingWorkDayWithDetails?.workDay?.comment ?: "") }
 
