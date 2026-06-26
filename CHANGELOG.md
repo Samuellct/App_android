@@ -1,4 +1,14 @@
 
+## [v2.4.0] - 2026-06-26
+## [2.4.0](https://github.com/Samuellct/App_android/compare/v2.3.0...v2.4.0) (2026-06-26)
+
+
+### Features
+
+* **backup:** implémentation de la sauvegarde automatique Google avec interrupteur d'opt-out ([7c85ace](https://github.com/Samuellct/App_android/commit/7c85ace785ae680512a5813293c8631ae86d9a8d))
+
+
+
 ## [v2.3.0] - 2026-06-25
 ## [2.3.0](https://github.com/Samuellct/App_android/compare/v2.2.2...v2.3.0) (2026-06-25)
 
