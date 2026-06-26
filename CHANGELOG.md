@@ -1,4 +1,14 @@
 
+## [v2.4.1] - 2026-06-26
+### [2.4.1](https://github.com/Samuellct/App_android/compare/v2.4.0...v2.4.1) (2026-06-26)
+
+
+### Bug Fixes
+
+* **backup:** hériter de BackupAgent au lieu de BackupAgentHelper pour prendre en charge la sauvegarde auto complète ([1c27274](https://github.com/Samuellct/App_android/commit/1c27274526f7966bc28b500551ab0c348cca339a))
+
+
+
 ## [v2.4.0] - 2026-06-26
 ## [2.4.0](https://github.com/Samuellct/App_android/compare/v2.3.0...v2.4.0) (2026-06-26)
 
