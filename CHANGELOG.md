@@ -1,4 +1,14 @@
 
+## [v2.5.0] - 2026-06-26
+## [2.5.0](https://github.com/Samuellct/App_android/compare/v2.4.2...v2.5.0) (2026-06-26)
+
+
+### Features
+
+* **widget:** implement Jalon 2 adaptive pointing widget, AlarmManager reminders, and dialog prefill fixes ([22b121c](https://github.com/Samuellct/App_android/commit/22b121cd616d598110f834a038679c8a1cf9fa2f))
+
+
+
 ## [v2.4.2] - 2026-06-26
 ### [2.4.2](https://github.com/Samuellct/App_android/compare/v2.4.1...v2.4.2) (2026-06-26)
 
